@@ -15,11 +15,20 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
+    <!-- locatie: MA -->
       <a-entity 
         gltf-model="./assets/magnemite/scene.gltf" 
         rotation="0 180 0" 
         scale="0.15 0.15 0.15" 
         gps-entity-place="longitude: 5.670105; latitude: 51.972997;" 
+        animation-mixer/>   
+      </a-entity>
+      <!-- Locatie: JM -->
+      <a-entity 
+        gltf-model="./assets/dragonite/scene.gltf" 
+        rotation="0 180 0" 
+        scale="0.15 0.15 0.15" 
+        gps-entity-place="longitude: 5.850792; latitude: 51.878504;" 
         animation-mixer/>   
       </a-entity>
       <a-camera gps-camera rotation-reader> </a-camera>
