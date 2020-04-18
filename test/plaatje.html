@@ -41,6 +41,9 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
+  <a-assets>
+    <a-asset-item id="pijl" src="./assets/arrow/scene.glb"></a-asset-item>
+  </a-assets>
     <!-- we use cors proxy to avoid cross-origin problems -->
     <a-nft
       type="nft"
@@ -49,13 +52,9 @@
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
-    >
-      <a-entity
-        gltf-model="./assets/arrow/scene.glb"
-        scale="0.2 0.2 0.2"
-      >
+    > </a-nft>
+      <a-entity gltf-model="#pijl" scale="0.2 0.2 0.2">
       </a-entity>
-    </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
 </body>
