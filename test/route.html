@@ -15,14 +15,23 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <!-- Locatie: hoek 1 parkeerplaats -->
+   <!--  Locatie: hoek 1 parkeerplaats
     <a-entity
         gltf-model="./assets/arrow/bal.glb"
         gps-entity-place="longitude: 5.850766; latitude: 51.878381;" 
         scale="0.1 0.1 0.1"
         position="0 2 0"
       >
-      </a-entity>
+      </a-entity> -->
+      <!--  Locatie: hoek 1 parkeerplaats -->
+     <a-entity
+        obj-model="obj: url(./arow/model.obj); mtl: url(./arrow/materials.mtl)"
+        gps-entity-place="longitude: 5.850766; latitude: 51.878381;" 
+        scale="1.5 1.5 1.5"
+      rotation="0 180 0"
+        position="0 1 0"
+      > 
+       </a-entity>
     <!-- Locatie: knooppunt 2 rechts simone de beauv. -->
     <a-entity
         gltf-model="./assets/arrow/bal.glb"
