@@ -34,6 +34,17 @@
         position="0 8 0"
       > 
        </a-entity>
+
+          <!--  Locatie: twan -->
+    
+      <a-entity
+        obj-model="obj: url(./assets/arrow/model.obj); mtl: url(./assets/arrow/materials.mtl)"
+        gps-entity-place="longitude: 5.470822; latitude: 51.489856;" 
+        scale="15 15 15"
+        rotation="0 180 90"
+        position="0 3 0"
+      > 
+       </a-entity>
     <!-- Locatie: knooppunt 2 rechts simone de beauv. -->
        <a-entity
         obj-model="obj: url(./assets/arrow/model.obj); mtl: url(./assets/arrow/materials.mtl)"
@@ -71,7 +82,7 @@
       >
       <a-camera
             rotation-reader
-            gps-camera="minDistance: 1; maxDistance: 5;"
+            gps-camera="minDistance: 1; maxDistance: 100;"
         >
     </a-camera>
     </a-scene>
