@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Click Location Based Example</title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  </head>
+
+  <script>
+    // here we register che 'clickhandler' component
+    AFRAME.registerComponent("clickhandler", {
+      init: function() {
+        // we add the click event listener to any instance of this component
+        this.el.addEventListener("click", () => {
+          alert("Clicked!");
+        });
+      }
+    });
+  </script>
+
+  <body style="margin: 0; overflow: hidden;">
+    <!-- with cursor and raycaster, we define a raycaster handler.
+    With 'raycaster' we add a CSS selector to match the only elements that will react to click events,
+    for performances reasons. See: (https://aframe.io/docs/1.0.0/introduction/interactions-and-controllers.html) -->
+    <a-scene
+      cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;"
+      raycaster="objects: [clickhandler];"
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      <!-- this entity, potentially every other on the a-scene, has the 'clickhandler' component
+      and will behave has we have defined: it will handle click events! -->
+      <a-box
+        clickhandler
+        material="color: red;"
+        scale="20 20 20"
+        gps-entity-place="latitude: 51.878381; longitude: 5.850766;"
+      >
+      </a-box>
+
+      <a-camera gps-camera rotation-reader> </a-camera>
+    </a-scene>
+  </body>
+</html>
