@@ -27,6 +27,69 @@
         var $leafletMap = $('.leafletMap'),
             leaflet = new $.hm.leaflet.Map($leafletMap.get(0), {
                 center: [51.8786502,5.8486047], // Joris thuis
+                zoom: 15
+            }),
+            destinationMarker = L.marker([51.685681,5.3557583]).addTo(leaflet.map),
+            lineBetweenDestinationAndLocation,
+            currentLocationMarker,
+            myCurrentRoutePath;
+
+
+        // overlay custom image
+        L.imageOverlay('jm.png',
+            [[51.878925, 5.849849], [51.877481, 5.852303]]).addTo(leaflet.map);
+
+
+        // init map
+        leaflet.map
+            .locate({
+                setView: true,
+                // maxZoom: 16,
+                watch: true,
+                enableHighAccuracy: true
+            })
+            .on('locationfound', function(e){
+                var radius = e.accuracy;
+
+console.log('locationfound', e);
+
+                if (!currentLocationMarker) {
+                    currentLocationMarker = L.marker(e.latlng).addTo(leaflet.map);
+                } else {
+                    if (!myCurrentRoutePath) {
+                        myCurrentRoutePath = L.polyline([currentLocationMarker.getLatLng()], {color: 'blue'}).addTo(leaflet.map);
+                    } else {
+                        myCurrentRoutePath.addLatLng(currentLocationMarker.getLatLng());
+                    }
+
+                    currentLocationMarker.setLatLng(e.latlng);
+                }
+
+                if (!lineBetweenDestinationAndLocation) {
+                    lineBetweenDestinationAndLocation = L.polyline([currentLocationMarker.getLatLng(), destinationMarker.getLatLng()], {color: 'red'}).addTo(leaflet.map);
+                } else {
+                    lineBetweenDestinationAndLocation.setLatLngs([currentLocationMarker.getLatLng(), destinationMarker.getLatLng()]);
+                }
+
+                // L.marker(e.latlng).addTo(leaflet.map)
+                //     .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+                // L.circle(e.latlng, radius).addTo(leaflet.map);
+            })
+            .on('locationerror', function(e){
+                alert(e.message);
+            });
+
+    });
+}(jQuery, window));
+
+/*<script>
+(function($, window, undefined) {
+    // init widgets
+    $(document).ready(function() {
+        var $leafletMap = $('.leafletMap'),
+            leaflet = new $.hm.leaflet.Map($leafletMap.get(0), {
+                center: [51.8786502,5.8486047], // Joris thuis
                 zoom: 16
             });
 
@@ -69,7 +132,7 @@ console.log('locationfound', e);
                 alert(e.message);
             });
 }
-    (jQuery, window))});
+    (jQuery, window))});*/
 </script>
 
 </body>
