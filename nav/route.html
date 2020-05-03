@@ -27,7 +27,7 @@
         var $leafletMap = $('.leafletMap'),
             leaflet = new $.hm.leaflet.Map($leafletMap.get(0), {
                 center: [51.8786502,5.8486047], // Joris thuis
-                zoom: 15
+                zoom: 16
             });
 
         // overlay custom image
@@ -43,10 +43,10 @@
         leaflet.map
             .locate({
                 setView: true,
-                maxZoom: 16,
+                maxZoom: 18,
                 watch: true
             })
-            /*.on('locationfound', function(e){
+            .on('locationfound', function(e){
 console.log('locationfound', e);
                 var radius = e.accuracy;
 
@@ -57,7 +57,7 @@ console.log('locationfound', e);
             })
             .on('locationerror', function(e){
                 alert(e.message);
-            });*/
+            });
 
     });
 }(jQuery, window));
