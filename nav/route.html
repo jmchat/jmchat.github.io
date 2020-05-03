@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Leaflet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .leafletMap {
+            width: 450px;
+            height: 450px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="leafletMap"></div>
+
+<script src="https://lib.hmcms.nl/js/2/jquery.js"></script>
+<script src="https://lib.hmcms.nl/js/2/libloader.js?load=hm.leaflet.map"></script>
+<!-- hm.leaflet.custom -->
+<script>
+(function($, window, undefined) {
+    // init widgets
+    $(document).ready(function() {
+        var $leafletMap = $('.leafletMap'),
+            leaflet = new $.hm.leaflet.Map($leafletMap.get(0), {
+                center: [51.8786502,5.8486047], // Joris thuis
+                zoom: 15
+            });
+
+        // overlay custom image
+        L.imageOverlay('https://www.julianahoeve.nl/ui/Julianahoeve/img/parkmap_googlemaps_2020.png',
+            [[51.881001, 5.847843], [51.876447, 5.854587]]).addTo(leaflet.map);
+
+        // rode lijn
+        L.polyline([
+            [51.8786502,5.8486047],
+            [51.880571, 5.855333]
+        ], {color: 'red'}).addTo(leaflet.map);
+
+        // current position:
+        leaflet.map
+            .locate({
+                setView: true,
+                maxZoom: 16,
+                watch: true
+            })
+            .on('locationfound', function(e){
+console.log('locationfound', e);
+                var radius = e.accuracy;
+
+                L.marker(e.latlng).addTo(leaflet.map)
+                    .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+                L.circle(e.latlng, radius).addTo(leaflet.map);
+            })
+            .on('locationerror', function(e){
+                alert(e.message);
+            });
+
+    });
+}(jQuery, window));
+</script>
+
+</body>
+</html>
