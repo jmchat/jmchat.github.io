@@ -46,18 +46,23 @@
                 maxZoom: 18,
                 watch: true
             })
-            .on('locationfound', function(e){
-console.log('locationfound', e);
+
+.on('locationfound', function(e){
                 var radius = e.accuracy;
 
-               // L.marker(e.latlng).addTo(leaflet.map)
-                 //   .bindPopup("You are within " + radius + " meters from this point").openPopup();
+console.log('locationfound', e);
 
-             //   L.circle(e.latlng, radius).addTo(leaflet.map);
-            })
-            .on('locationerror', function(e){
-                alert(e.message);
-            });
+                if (!currentLocationMarker) {
+                    currentLocationMarker = L.marker(e.latlng).addTo(leaflet.map);
+                } else {
+                    if (!myCurrentRoutePath) {
+                        myCurrentRoutePath = L.polyline([currentLocationMarker.getLatLng()], {color: 'blue'}).addTo(leaflet.map);
+                    } else {
+                        myCurrentRoutePath.addLatLng(currentLocationMarker.getLatLng());
+                    }
+
+                    currentLocationMarker.setLatLng(e.latlng);
+                }
 
     });
 }(jQuery, window));
