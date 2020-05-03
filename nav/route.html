@@ -65,6 +65,9 @@ console.log('locationfound', e);
                 }
 
     });
+ .on('locationerror', function(e){
+                alert(e.message);
+            });
 }
     (jQuery, window))});
 </script>
