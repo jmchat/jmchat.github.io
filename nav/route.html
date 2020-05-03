@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
         .leafletMap {
-            width: 800px;
-            height: 800px;
+            width: 450px;
+            height: 450px;
         }
     </style>
 
@@ -26,7 +26,7 @@
     $(document).ready(function() {
         var $leafletMap = $('.leafletMap'),
             leaflet = new $.hm.leaflet.Map($leafletMap.get(0), {
-                //center: [51.8786502,5.8486047], // Joris thuis
+                center: [51.8786502,5.8486047], // Joris thuis
                 zoom: 15
             }),
             // destinationMarker = L.marker([51.685681,5.3557583]).addTo(leaflet.map),
