@@ -39,7 +39,7 @@
 
 		<div id="map"></div>
     	<script>
-			var map = L.map("map").setView([51.8786502,5.8486047], 16);
+			var map = L.map("map").setView([51.8786502,5.8486047], 18);
 
 			L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
@@ -104,17 +104,17 @@
 					}, {
 						removeOnEnd: false,
 						icon: L.divIcon({html: "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(15.5, 15)})
-					}).motionDuration(10000)
+					}).motionDuration(20000)
 				]).addTo(map);
 
 
-			seqGroup.on("click", function(){
+			/*seqGroup.on("click", function(){
 				seqGroup.motionStart();
 			});
 
 			seqGroup.on("dblclick", function(e){
 				seqGroup.motionToggle();
-			});
+			});*/
 
 			setTimeout(function () {
 				seqGroup.motionStart();
