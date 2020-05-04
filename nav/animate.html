@@ -7,11 +7,9 @@
 
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-<!-- 		<link rel="stylesheet" href="https://leaflet.github.io/Leaflet.draw/src/leaflet.draw.css"/> -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-<!-- 		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script> -->
 
 		<!--script src="src/leaflet.motion.js"></script>
 		<script src="src/leaflet.motion.utils.js"></script>
@@ -45,58 +43,13 @@
 				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 			}).addTo(map);
 
-
-			/*var map = $('.leafletMap'),
-            leaflet = new $.hm.leaflet.Map($map.get(0), {
-                center: [51.8786502,5.8486047], // Joris thuis
-                zoom: 15
-            }),*/
-
-/*			var options = {
-		        draw: {
-		            circle: false, // Turns off this drawing tool
-		            rectangle: false,
-		            marker: false,
-					circlemarker: false
-		        }
-		    };*/
-
-			/*var drawControl = new L.Control.Draw(options);
-		    map.addControl(drawControl);
-
-		    map.on(L.Draw.Event.CREATED, function (e) {
-		        var type = e.layerType,
-		            layer = e.layer;
-
-				if (type === "polyline") {
-					var line = L.motion.polyline(layer.getLatLngs(), {
-						color: "orange"
-					}, {
-						auto: true,
-						easing: L.Motion.Ease.swing
-					}).motionSpeed(100000).addTo(map);
-				}
-
-				if (type === "polygon") {
-					L.motion.polygon(layer.getLatLngs(), {
-						color: "red",
-						fill: true,
-						fillOpacity: 0.4
-					},{
-						auto: true
-					}, {
-						removeOnEnd: true,
-						icon: L.divIcon({className:"red", html: "<i class='fa fa-superpowers fa-spin fa-2x' aria-hidden='true' motion-base='0'></i>", iconSize: L.point(24, 24), iconAnchor: L.point(5, 22)})
-					}).motionDuration(10000).addTo(map);
-				}
-		    });*/
-
             L.imageOverlay('https://www.julianahoeve.nl/ui/Julianahoeve/img/parkmap_googlemaps_2020.png',
             [[51.87883, 5.84992], [51.87746, 5.85231]]).addTo(map);
 		
+		//Hier kunnen dus meerdere routes onder elkaar staan
 			var carRoute = JSON.parse('[{"lat":51.878726,"lng":5.850683},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
 
-			var seqGroup = L.motion.seq([
+			var route = L.motion.seq([
 					L.motion.polyline(carRoute, {
 						colors: "SlateGrey"
 					}, {
@@ -108,7 +61,7 @@
 				]).addTo(map);
 
 			setTimeout(function () {
-				seqGroup.motionStart();
+				route.motionStart();
 			}, 1000);
 
     	</script>
