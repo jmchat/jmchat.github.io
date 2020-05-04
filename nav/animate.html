@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Leaflet motion plugin</title>
+    	<meta charset="utf-8" />
+
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+		<link rel="stylesheet" href="https://leaflet.github.io/Leaflet.draw/src/leaflet.draw.css"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+
+		<!--script src="src/leaflet.motion.js"></script>
+		<script src="src/leaflet.motion.utils.js"></script>
+		<script src="src/leaflet.motion.easing.js"></script>
+		<script src="src/layer/leaflet.motion.polyline.js"></script>
+		<script src="src/layer/leaflet.motion.polygon.js"></script>
+		<script src="src/layer/leaflet.motion.group.js"></script>
+		<script src="src/layer/leaflet.motion.seq.js"></script-->
+		<script src="https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js"></script>
+        <style>
+            html, body, #map { width: 100%; height: 100%; margin: 0px; padding: 0px;}
+			.leaflet-div-icon {
+				background: transparent!important;
+				border: none!important;
+				color: white;
+			}
+
+			.red {
+				color: red!important;
+			}
+        </style>
+     </head>
+
+    <body>
+
+		<div id="map"></div>
+    	<script>
+			var map = L.map("map").setView([51, 1], 8);
+
+			L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+			}).addTo(map);
+
+			var options = {
+		        draw: {
+		            circle: false, // Turns off this drawing tool
+		            rectangle: false,
+		            marker: false,
+					circlemarker: false
+		        }
+		    };
+
+			var drawControl = new L.Control.Draw(options);
+		    map.addControl(drawControl);
+
+		    map.on(L.Draw.Event.CREATED, function (e) {
+		        var type = e.layerType,
+		            layer = e.layer;
+
+				if (type === "polyline") {
+					var line = L.motion.polyline(layer.getLatLngs(), {
+						color: "orange"
+					}, {
+						auto: true,
+						easing: L.Motion.Ease.swing
+					}).motionSpeed(100000).addTo(map);
+				}
+
+				if (type === "polygon") {
+					L.motion.polygon(layer.getLatLngs(), {
+						color: "red",
+						fill: true,
+						fillOpacity: 0.4
+					},{
+						auto: true
+					}, {
+						removeOnEnd: true,
+						icon: L.divIcon({className:"red", html: "<i class='fa fa-superpowers fa-spin fa-2x' aria-hidden='true' motion-base='0'></i>", iconSize: L.point(24, 24), iconAnchor: L.point(5, 22)})
+					}).motionDuration(10000).addTo(map);
+				}
+		    });
+
+		
+			var carRoute = JSON.parse('[{"lat":51.878726,"lng":5.850683},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542},');
+
+			var seqGroup = L.motion.seq([
+					L.motion.polyline(trackRoute, {
+					color: "orangered"
+					}, {
+						easing: L.Motion.Ease.easeInOutQuad
+					}, {
+						removeOnEnd: true,
+						icon: L.divIcon({html: "<i class='fa fa-truck fa-2x fa-flip-horizontal' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
+					}).motionDuration(8000),
+					L.motion.polyline(carRoute, {
+						colors: "SlateGrey"
+					}, {
+						easing: L.Motion.Ease.easeInOutElastic
+					}, {
+						removeOnEnd: true,
+						icon: L.divIcon({html: "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
+					}).motionDuration(7000)
+				]).addTo(map);
+
+
+			seqGroup.on("click", function(){
+				seqGroup.motionStart();
+			});
+
+			seqGroup.on("dblclick", function(e){
+				seqGroup.motionToggle();
+			});
+
+			setTimeout(function () {
+				seqGroup.motionStart();
+			}, 1000);
+
+    	</script>
+    </body>
+
+</html>
