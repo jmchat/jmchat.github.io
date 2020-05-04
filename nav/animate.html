@@ -7,11 +7,11 @@
 
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-		<link rel="stylesheet" href="https://leaflet.github.io/Leaflet.draw/src/leaflet.draw.css"/>
+<!-- 		<link rel="stylesheet" href="https://leaflet.github.io/Leaflet.draw/src/leaflet.draw.css"/> -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+<!-- 		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script> -->
 
 		<!--script src="src/leaflet.motion.js"></script>
 		<script src="src/leaflet.motion.utils.js"></script>
@@ -52,14 +52,14 @@
                 zoom: 15
             }),*/
 
-			var options = {
+/*			var options = {
 		        draw: {
 		            circle: false, // Turns off this drawing tool
 		            rectangle: false,
 		            marker: false,
 					circlemarker: false
 		        }
-		    };
+		    };*/
 
 			/*var drawControl = new L.Control.Draw(options);
 		    map.addControl(drawControl);
@@ -106,15 +106,6 @@
 						icon: L.divIcon({html: "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(15.5, 15)})
 					}).motionDuration(20000)
 				]).addTo(map);
-
-
-			/*seqGroup.on("click", function(){
-				seqGroup.motionStart();
-			});
-
-			seqGroup.on("dblclick", function(e){
-				seqGroup.motionToggle();
-			});*/
 
 			setTimeout(function () {
 				seqGroup.motionStart();
