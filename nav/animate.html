@@ -95,14 +95,6 @@
 			var carRoute = JSON.parse('[{"lat":51.878726,"lng":5.850683},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
 
 			var seqGroup = L.motion.seq([
-					L.motion.polyline(trackRoute, {
-					color: "orangered"
-					}, {
-						easing: L.Motion.Ease.easeInOutQuad
-					}, {
-						removeOnEnd: true,
-						icon: L.divIcon({html: "<i class='fa fa-truck fa-2x fa-flip-horizontal' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
-					}).motionDuration(8000),
 					L.motion.polyline(carRoute, {
 						colors: "SlateGrey"
 					}, {
