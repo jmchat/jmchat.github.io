@@ -49,25 +49,29 @@
 		//Hier kunnen dus meerdere routes onder elkaar staan
 			var carRoute = JSON.parse('[{"lat":51.878726,"lng":5.850683},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
 
-<<<<<<< HEAD
+			var carRoute_2 = JSON.parse('[{"lat":51.878726,"lng":5.850683},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
+			
+			var urlParams = new URLSearchParams(window.location.search);
+			var locations = "carRoute_" + urlParams.get('location')
+			console.log(locations)
+
 if (urlParams.has('location') == true) {
 
-			var route = L.motion.polyline(carRoute_2, {
-=======
-			var route = L.motion.seq([
-				L.motion.polyline(carRoute, {
->>>>>>> parent of 86195a5... Update animate.html
+			var route = L.motion.polyline(locations, {
 						colors: "SlateGrey"
+					}, {
+						auto: false,
+						duration: 2000
 					}, {
 						removeOnEnd: false,
 						icon: L.divIcon({html: "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
-					}).motionDuration(7000)
-				]).addTo(map);
+					}).addTo(map);
 
-
-			setTimeout(function () {
+				setTimeout(function () {
 				route.motionStart();
 			}, 2000);
+
+		}
 
 /*const queryString = window.location.search;
 console.log(queryString);
