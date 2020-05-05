@@ -51,9 +51,9 @@
 
 			var route = L.motion.seq([
 					L.motion.polyline(carRoute, {
-						colors: "SlateGrey",
+						colors: "green",
 						easing: L.Motion.Ease.easeInOutElastic,
-						speed: 20,
+						speed: 2,
 						removeOnEnd: "false",
 						icon: L.divIcon({html: "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(15.5, 15)})
 					})
@@ -61,7 +61,7 @@
 
 			setTimeout(function () {
 				route.motionStart();
-			}, 500);
+			}, 2000);
 
     	</script>
     </body>
