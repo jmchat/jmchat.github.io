@@ -61,12 +61,17 @@ if (urlParams.has('location') == true) {
 					}, {
 						removeOnEnd: false,
 						icon: L.divIcon({html: "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
-					}).motionSpeed(50)
+					}).motionDuration(7000)
 				]).addTo(map);
+
 
 			setTimeout(function () {
 				route.motionStart();
 			}, 2000);
+
+/*const queryString = window.location.search;
+console.log(queryString);
+*/
 
     	</script>
     </body>
