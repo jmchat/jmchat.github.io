@@ -47,12 +47,14 @@
             [[51.87883, 5.84992], [51.87746, 5.85231]]).addTo(map);
 		
 		//Hier kunnen dus meerdere routes onder elkaar staan
-			var carRoute = JSON.parse('[{"lat":51.878726,"lng":5.850683},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
+			var carRoute = [];
 
-			var carRoute_2 = JSON.parse('[{"lat":51.878726,"lng":5.850683},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
+			carRoute[1] = JSON.parse('[{"lat":51.878726,"lng":5.850683},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
+
+			carRoute[2] = JSON.parse('[{"lat":51.8798573,"lng":5.8503105},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
 			
 			var urlParams = new URLSearchParams(window.location.search);
-			var locations = "carRoute_" + urlParams.get('location')
+			var locations = carRoute[urlParams.get('location')]
 			console.log(locations)
 
 if (urlParams.has('location') == true) {
