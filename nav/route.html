@@ -70,17 +70,6 @@ console.log('locationfound', e);
 
                     currentLocationMarker.setLatLng(e.latlng);
                 }
-
-               /* if (!lineBetweenDestinationAndLocation) {
-                    lineBetweenDestinationAndLocation = L.polyline([currentLocationMarker.getLatLng(), destinationMarker.getLatLng()], {color: 'red'}).addTo(leaflet.map);
-                } else {
-                    lineBetweenDestinationAndLocation.setLatLngs([currentLocationMarker.getLatLng(), destinationMarker.getLatLng()]);
-                }*/
-
-                // L.marker(e.latlng).addTo(leaflet.map)
-                //     .bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-                // L.circle(e.latlng, radius).addTo(leaflet.map);
             })
             .on('locationerror', function(e){
                 alert(e.message);
