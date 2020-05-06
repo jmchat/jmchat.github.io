@@ -7,28 +7,16 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="/css/styles.css">
+		<link rel="stylesheet" href="./css/styles.css">
 
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-
-		<!--script src="src/leaflet.motion.js"></script>
-		<script src="src/leaflet.motion.utils.js"></script>
-		<script src="src/leaflet.motion.easing.js"></script>
-		<script src="src/layer/leaflet.motion.polyline.js"></script>
-		<script src="src/layer/leaflet.motion.polygon.js"></script>
-		<script src="src/layer/leaflet.motion.group.js"></script>
-		<script src="src/layer/leaflet.motion.seq.js"></script-->
 		<script src="https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js"></script>
         <style>
-            html, body, #map { width: 100%; height: 100%; margin: 0px; padding: 0px;}
+            html, body, #map {width: 100%; height: 100%; margin: 0px; padding: 25px 0 40px 0;}
 			.leaflet-div-icon {
 				background: transparent!important;
 				border: none!important;
 				color: white;
-			}
-
-			.red {
-				color: red!important;
 			}
         </style>
      </head>
@@ -36,14 +24,14 @@
     <body>
 
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+<div class="header">
+  <div>
+    <a href="/"><b>Strandpark</b> de <b>Zeeuwse Kust</b></a>
   </div>
 </div>
 
 <!-- Map weergave -->
-		<div id="map"></div>
+		<div id="map" class="map"></div>
 
 <!-- Alle scripts -->
     	<script>
@@ -54,7 +42,7 @@
 
 			L.tileLayer('https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',{
 			/*https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {*/
-				attribution: 'Route beschrijving voor Strandpark De Zeeuwse Kust'
+				// attribution: 'Route beschrijving voor Strandpark De Zeeuwse Kust'
 			}).addTo(map);
 
             L.imageOverlay('plattegrond.png',
