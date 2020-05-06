@@ -4,10 +4,10 @@
     <head>
     	<title>Route naar uw plek op Strandpark de Zeeuwse Kust</title>
     	<meta charset="utf-8" />
-
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="/css/styles.css">
 
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 
@@ -35,7 +35,17 @@
 
     <body>
 
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+  </div>
+</div>
+
+<!-- Map weergave -->
 		<div id="map"></div>
+
+<!-- Alle scripts -->
     	<script>
 			var map = L.map("map"),
 
@@ -107,9 +117,9 @@ if ((urlParams.has('location') == true) && (number < 3)) {
 
 	map.locate({
 		setView: true, 
-		maxZoom: 18,
-		watch: true,
-		enableHighAccuracy: true
+		maxZoom: 16,
+		watch: false,
+		enableHighAccuracy: false
 	});
 
 
