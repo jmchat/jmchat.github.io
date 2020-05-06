@@ -37,15 +37,15 @@
 
 		<div id="map"></div>
     	<script>
-			var map = L.map("map").setView([51.878407,5.850832], 17);
+			var map = L.map("map").setView([51.737594,3.804484], 17);
 
 			L.tileLayer('https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',{
 			/*https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {*/
 				attribution: 'Route beschrijving voor Strandpark De Zeeuwse Kust'
 			}).addTo(map);
 
-            L.imageOverlay('https://www.julianahoeve.nl/ui/Julianahoeve/img/parkmap_googlemaps_2020.png',
-            [[51.87883, 5.84992], [51.87746, 5.85231]]).addTo(map);
+            L.imageOverlay('plattegrond.png',
+            [[51.739979,3.798248], [51.734991,3.809223]]).addTo(map);
 		
 		//Hier kunnen dus meerdere routes onder elkaar staan
 			var carRoute = [];
@@ -80,8 +80,23 @@ if ((urlParams.has('location') == true) && (number < 3)) {
 		function onLocationFound(e) {
 		var radius = e.accuracy / 2;
 
-		L.marker(e.latlng).addTo(map)
-	}
+		// L.marker(e.latlng).addTo(map)
+
+		 currentLocationMarker;
+         myCurrentRoutePath;
+
+         if (!currentLocationMarker) {
+                    currentLocationMarker = L.marker(e.latlng).addTo(map);
+                } else {
+                    if (!myCurrentRoutePath) {
+                        myCurrentRoutePath = L.polyline([currentLocationMarker.getLatLng()], {color: 'blue'}).addTo(map);
+                    } else {
+                        myCurrentRoutePath.addLatLng(currentLocationMarker.getLatLng());
+                    }
+
+                    currentLocationMarker.setLatLng(e.latlng);
+                }
+            }
 
 	function onLocationError(e) {
 		alert(e.message);
