@@ -26,7 +26,7 @@
 <!-- Navbar (sit on top) -->
 <div class="header">
   <div>
-    <a href="/"><b>Strandpark</b> de <b>Zeeuwse Kust</b></a>
+    <h2><b>Strandpark</b> de <b>Zeeuwse Kust</b></h2>
   </div>
 </div>
 
@@ -47,6 +47,11 @@
 
             L.imageOverlay('plattegrond.png',
             [[51.739979,3.798248], [51.734991,3.809223]]).addTo(map);
+
+            readTextFile("feed.json", function(text){
+    var data = JSON.parse(text);
+    console.log(data);
+});
 		
 		//Hier kunnen dus meerdere routes onder elkaar staan
 			var carRoute = [];
@@ -106,7 +111,7 @@ if ((urlParams.has('location') == true) && (number < 3)) {
 	map.locate({
 		setView: true, 
 		maxZoom: 16,
-		watch: false,
+		watch: true,
 		enableHighAccuracy: false
 	});
 
