@@ -79,7 +79,7 @@
                 </div>
                 <div class="item">
                     <div class="card">
-                        <img src="assets/img/sample/photo/d2.jpg" class="card-img-top" alt="image">
+                        <img src="assets/img/sample/photo/openingstijden.jpg" class="card-img-top" alt="image">
                         <div class="card-body pt-2">
                             <h4 class="mb-0">Openingstijden</h4>
                         </div>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="item">
                     <div class="card">
-                        <img src="assets/img/sample/photo/d3.jpg" class="card-img-top" alt="image">
+                        <img src="assets/img/sample/photo/restaurant.jpg" class="card-img-top" alt="image">
                         <div class="card-body pt-2">
                             <h4 class="mb-0">Restaurant</h4>
                         </div>
@@ -95,7 +95,7 @@
                 </div>
                 <div class="item">
                     <div class="card">
-                        <img src="assets/img/sample/photo/d4.jpg" class="card-img-top" alt="image">
+                        <img src="assets/img/sample/photo/faciliteiten.jpg" class="card-img-top" alt="image">
                         <div class="card-body pt-2">
                             <h4 class="mb-0">Faciliteiten</h4>
                         </div>
@@ -103,7 +103,7 @@
                 </div>
                 <div class="item">
                     <div class="card">
-                        <img src="assets/img/sample/photo/d6.jpg" class="card-img-top" alt="image">
+                        <img src="assets/img/sample/photo/Activiteiten.jpg" class="card-img-top" alt="image">
                         <div class="card-body pt-2">
                             <h4 class="mb-0">Activiteiten</h4>
                         </div>
@@ -211,20 +211,19 @@
                 <ion-icon name="home-outline"></ion-icon>
             </div>
         </a>
-        <a href="app-components.html" class="item">
+        <a href="page-route.html" class="item">
             <div class="col">
-                <ion-icon name="cube-outline"></ion-icon>
+                <ion-icon name="navigate-circle-outline"></ion-icon>
             </div>
         </a>
         <a href="page-chat.html" class="item">
             <div class="col">
-                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                <span class="badge badge-danger">5</span>
+                <ion-icon name="time-outline"></ion-icon>
             </div>
         </a>
-        <a href="app-pages.html" class="item">
+        <a href="page-restaurant.html" class="item">
             <div class="col">
-                <ion-icon name="layers-outline"></ion-icon>
+                <ion-icon name="restaurant-outline"></ion-icon>
             </div>
         </a>
         <a href="javascript:;" class="item" data-toggle="modal" data-target="#sidebarPanel">
@@ -413,6 +412,62 @@
         </div>
     </div>
     <!-- * welcome notification -->
+
+    <!-- iOS Add to Home Action Sheet -->
+    <div class="modal inset fade action-sheet ios-add-to-home" id="ios-add-to-home-screen" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add to Home Screen</h5>
+                    <a href="javascript:;" class="close-button" data-dismiss="modal">
+                        <ion-icon name="close"></ion-icon>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="action-sheet-content text-center">
+                        <div class="mb-1"><img src="assets/img/icon/192x192.png" alt="image" class="imaged w48">
+                        </div>
+                        <h4>Mobilekit</h4>
+                        <div>
+                            Install Mobilekit on your iPhone's home screen.
+                        </div>
+                        <div>
+                            Tap <ion-icon name="share-outline"></ion-icon> and Add to homescreen.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * iOS Add to Home Action Sheet -->
+    <!-- Android Add to Home Action Sheet -->
+    <div class="modal inset fade action-sheet android-add-to-home" id="android-add-to-home-screen" tabindex="-1"
+        role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add to Home Screen</h5>
+                    <a href="javascript:;" class="close-button" data-dismiss="modal">
+                        <ion-icon name="close"></ion-icon>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="action-sheet-content text-center">
+                        <div class="mb-1"><img src="assets/img/icon/192x192.png" alt="image" class="imaged w48">
+                        </div>
+                        <h4>Mobilekit</h4>
+                        <div>
+                            Install Mobilekit on your Android's home screen.
+                        </div>
+                        <div>
+                            Tap <ion-icon name="ellipsis-vertical"></ion-icon> and Add to homescreen.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * Android Add to Home Action Sheet -->
 
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Jquery -->
