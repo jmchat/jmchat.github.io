@@ -15,9 +15,15 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="manifest.json">
+<!-- Zelf toegevoegd -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js"></script>
+
 </head>
 
-<body class="bg-white">
+<body>
 
     <!-- loader -->
     <div id="loader">
@@ -26,226 +32,33 @@
     <!-- * loader -->
 
     <!-- App Header -->
-    <div class="appHeader bg-primary scrolled">
+    <div class="appHeader bg-primary text-light">
         <div class="left">
-            <a href="#" class="headerButton" data-toggle="modal" data-target="#sidebarPanel">
-                <ion-icon name="menu-outline"></ion-icon>
+            <a href="javascript:;" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
             </a>
         </div>
-        <div class="pageTitle">
-            Pages
-        </div>
-        <div class="right">
-            <a href="javascript:;" class="headerButton toggle-searchbox">
-                <ion-icon name="search-outline"></ion-icon>
-            </a>
-        </div>
+        <div class="pageTitle">Blank Page</div>
+        <div class="right"></div>
     </div>
     <!-- * App Header -->
-
-    <!-- Search Component -->
-    <div id="search" class="appHeader">
-        <form class="search-form">
-            <div class="form-group searchbox">
-                <input type="text" class="form-control" placeholder="Search...">
-                <i class="input-icon">
-                    <ion-icon name="search-outline"></ion-icon>
-                </i>
-                <a href="javascript:;" class="ml-1 close toggle-searchbox">
-                    <ion-icon name="close-circle"></ion-icon>
-                </a>
-            </div>
-        </form>
-    </div>
-    <!-- * Search Component -->
 
     <!-- App Capsule -->
     <div id="appCapsule">
 
-        <div class="header-large-title">
-            <h1 class="title">Pages</h1>
-        </div>
 
-        <ul class="listview image-listview flush transparent mt-3 mb-2">
-            <li>
-                <a href="page-chat.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Chat
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-fullpage-slider.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="image-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Full Slider
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-login.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Login
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-register.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Register
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-forgot-password.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="refresh-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Forgot Password
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-sms-verification.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="call-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        SMS Verification
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-profile.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Profile
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-blank.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="document-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Blank Page
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-faq.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="help-buoy-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        FAQ
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-blogpost.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="document-text-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Blog Post
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-about.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="document-text-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        About
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-contact.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="call-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Contact
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-maintenance.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="hammer-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Maintenance
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="page-under-construction.html" class="item">
-                    <div class="icon-box bg-primary">
-                        <ion-icon name="megaphone-outline"></ion-icon>
-                    </div>
-                    <div class="in">
-                        Under Construction
-                    </div>
-                </a>
-            </li>
-        </ul>
-
-
-        <!-- app footer -->
-        <div class="appFooter">
-            <img src="assets/img/logo.png" alt="icon" class="footer-logo mb-2">
-            <div class="footer-title">
-                Copyright © Mobilekit 2020. All Rights Reserved.
-            </div>
-            <div>Mobilekit is PWA ready Mobile UI Kit Template.</div>
-            Great way to start your mobile websites and pwa projects.
-
-            <div class="mt-2">
-                <a href="javascript:;" class="btn btn-icon btn-sm btn-facebook">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                </a>
-                <a href="javascript:;" class="btn btn-icon btn-sm btn-twitter">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                </a>
-                <a href="javascript:;" class="btn btn-icon btn-sm btn-linkedin">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-                <a href="javascript:;" class="btn btn-icon btn-sm btn-instagram">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-                <a href="javascript:;" class="btn btn-icon btn-sm btn-whatsapp">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                </a>
-                <a href="#" class="btn btn-icon btn-sm btn-secondary goTop">
-                    <ion-icon name="arrow-up-outline"></ion-icon>
-                </a>
-            </div>
+        <div id="map" class="section full mt-2">
+            <div class="section-title map">Title</div>
+           <!--  <div class="wide-block pt-2 pb-2">
+                Great to start your projects from here.
+            </div> -->
 
         </div>
-        <!-- * app footer -->
+
+
 
     </div>
     <!-- * App Capsule -->
-
 
     <!-- App Bottom Menu -->
     <div class="appBottomMenu">
@@ -265,7 +78,7 @@
                 <span class="badge badge-danger">5</span>
             </div>
         </a>
-        <a href="app-pages.html" class="item active">
+        <a href="app-pages.html" class="item">
             <div class="col">
                 <ion-icon name="layers-outline"></ion-icon>
             </div>
@@ -431,7 +244,85 @@
     </div>
     <!-- * App Sidebar -->
 
+   <!--  /////////// Eigen script ///////// -->
+    <script>
+            var map = L.map("map"),
 
+            currentLocationMarker,
+            myCurrentRoutePath;
+
+            L.tileLayer('https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',{
+            /*https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {*/
+                // attribution: 'Route beschrijving voor Strandpark De Zeeuwse Kust'
+            }).addTo(map);
+
+            L.imageOverlay('./assets/img/plattegrond.png',
+            [[51.739979,3.798248], [51.734991,3.809223]]).addTo(map);
+
+        //Hier kunnen dus meerdere routes onder elkaar staan
+            var carRoute = [];
+
+            carRoute[1] = JSON.parse('[{"lat":51.878726,"lng":5.850683},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
+
+            carRoute[2] = JSON.parse('[{"lat":51.8798573,"lng":5.8503105},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
+            
+            var urlParams = new URLSearchParams(window.location.search);
+            var locations = carRoute[urlParams.get('location')];
+            var number = urlParams.get('location');
+
+if ((urlParams.has('location') == true) && (number < 3)) {
+
+            var route = L.motion.polyline(locations, {
+                        color: "#994000",
+                        weight: 10,
+                    }, {
+                        auto: false,
+                        duration: 2000
+                    }, {
+                        removeOnEnd: false,
+                        icon: L.divIcon({html: "<i class='fa fa-car fa-3x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
+                    }).addTo(map);
+
+                setTimeout(function () {
+                route.motionStart();
+            }, 2000);
+
+        }
+
+        function onLocationFound(e) {
+        var radius = e.accuracy / 2;
+
+        // L.marker(e.latlng).addTo(map)
+
+         if (!currentLocationMarker) {
+                    currentLocationMarker = L.marker(e.latlng).addTo(map);
+                } else {
+                    if (!myCurrentRoutePath) {
+                        myCurrentRoutePath = L.polyline([currentLocationMarker.getLatLng()], {color: 'blue'}).addTo(map);
+                    } else {
+                        myCurrentRoutePath.addLatLng(currentLocationMarker.getLatLng());
+                    }
+
+                    currentLocationMarker.setLatLng(e.latlng);
+                }
+            }
+
+    function onLocationError(e) {
+        alert(e.message);
+    }
+
+    map.on('locationfound', onLocationFound);
+    map.on('locationerror', onLocationError);
+
+    map.locate({
+        setView: true, 
+        maxZoom: 16,
+        watch: true,
+        enableHighAccuracy: false
+    });
+
+
+        </script>
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Jquery -->
     <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
@@ -446,6 +337,7 @@
     <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
     <!-- Base Js File -->
     <script src="assets/js/base.js"></script>
+
 
 </body>
 
