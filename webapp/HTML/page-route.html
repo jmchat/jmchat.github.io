@@ -196,7 +196,7 @@
         //Hier kunnen dus meerdere routes onder elkaar staan
             var carRoute = [];
 
-            carRoute[1] = JSON.parse('[{"lat":51.878726,"lng":5.850683},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
+            carRoute[1] = JSON.parse('[{"lat":51.738194,"lng":3.800337},{"lat":51.737249,"lng":3.803118},{"lat":51.736890,"lng":3.803075},{"lat":51.736342,"lng":3.804748},{"lat":51.736102,"lng":3.804741},{"lat":51.736058,"lng":3.805324}]');
 
             carRoute[2] = JSON.parse('[{"lat":51.8798573,"lng":5.8503105},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
             
@@ -208,13 +208,13 @@ if ((urlParams.has('location') == true) && (number < 3)) {
 
             var route = L.motion.polyline(locations, {
                         color: "#994000",
-                        weight: 10,
+                        weight: 8,
                     }, {
                         auto: false,
                         duration: 2000
                     }, {
                         removeOnEnd: false,
-                        icon: L.divIcon({html: "<i class='fa fa-car fa-3x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
+                        icon: L.divIcon({html: "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
                     }).addTo(map);
 
                 setTimeout(function () {

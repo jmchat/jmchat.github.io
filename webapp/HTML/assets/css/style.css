@@ -57,6 +57,14 @@ html{height: 100%}
 
 #gp-k9tm6rki-widget-container{margin-top: 55px !important;}
 
+.leaflet-div-icon{background: transparent !important;}
+
+.fa-car:before {color: white !important;}
+
+
+/* //////////JM edit /////////// */
+
+
 .appHeader {
   min-height: 56px;
   display: flex;
