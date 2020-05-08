@@ -60,27 +60,26 @@
     </div>
     <!-- * App Capsule -->
 
-    <!-- App Bottom Menu -->
+   <!-- App Bottom Menu -->
     <div class="appBottomMenu">
         <a href="index.html" class="item">
             <div class="col">
                 <ion-icon name="home-outline"></ion-icon>
             </div>
         </a>
-        <a href="app-components.html" class="item">
+        <a href="page-route.html" class="item active">
             <div class="col">
-                <ion-icon name="cube-outline"></ion-icon>
+                <ion-icon name="navigate-circle-outline"></ion-icon>
             </div>
         </a>
         <a href="page-chat.html" class="item">
             <div class="col">
-                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                <span class="badge badge-danger">5</span>
+                <ion-icon name="time-outline"></ion-icon>
             </div>
         </a>
-        <a href="app-pages.html" class="item">
+        <a href="page-restaurant.html" class="item">
             <div class="col">
-                <ion-icon name="layers-outline"></ion-icon>
+                <ion-icon name="restaurant-outline"></ion-icon>
             </div>
         </a>
         <a href="javascript:;" class="item" data-toggle="modal" data-target="#sidebarPanel">
@@ -173,72 +172,7 @@
                             </div>
                         </li>
                     </ul>
-
-                    <div class="listview-title mt-2 mb-1">
-                        <span>Friends</span>
-                    </div>
-                    <ul class="listview image-listview flush transparent no-line">
-                        <li>
-                            <a href="page-chat.html" class="item">
-                                <img src="assets/img/sample/avatar/avatar7.jpg" alt="image" class="image">
-                                <div class="in">
-                                    <div>Sophie Asveld</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-chat.html" class="item">
-                                <img src="assets/img/sample/avatar/avatar3.jpg" alt="image" class="image">
-                                <div class="in">
-                                    <div>Sebastian Bennett</div>
-                                    <span class="badge badge-danger">6</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-chat.html" class="item">
-                                <img src="assets/img/sample/avatar/avatar10.jpg" alt="image" class="image">
-                                <div class="in">
-                                    <div>Beth Murphy</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-chat.html" class="item">
-                                <img src="assets/img/sample/avatar/avatar2.jpg" alt="image" class="image">
-                                <div class="in">
-                                    <div>Amelia Cabal</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-chat.html" class="item">
-                                <img src="assets/img/sample/avatar/avatar5.jpg" alt="image" class="image">
-                                <div class="in">
-                                    <div>Henry Doe</div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-
                 </div>
-
-                <!-- sidebar buttons -->
-                <div class="sidebar-buttons">
-                    <a href="javascript:;" class="button">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </a>
-                    <a href="javascript:;" class="button">
-                        <ion-icon name="archive-outline"></ion-icon>
-                    </a>
-                    <a href="javascript:;" class="button">
-                        <ion-icon name="settings-outline"></ion-icon>
-                    </a>
-                    <a href="javascript:;" class="button">
-                        <ion-icon name="log-out-outline"></ion-icon>
-                    </a>
-                </div>
-                <!-- * sidebar buttons -->
             </div>
         </div>
     </div>
@@ -246,7 +180,7 @@
 
    <!--  /////////// Eigen script ///////// -->
     <script>
-            var map = L.map("map"),
+            var map = L.map("map").setView([51.737561,3.803846], 16),
 
             currentLocationMarker,
             myCurrentRoutePath;
@@ -257,7 +191,7 @@
             }).addTo(map);
 
             L.imageOverlay('./assets/img/plattegrond.png',
-            [[51.739979,3.798248], [51.734991,3.809223]]).addTo(map);
+            [[51.739686,3.798042], [51.735146,3.809981]]).addTo(map);
 
         //Hier kunnen dus meerdere routes onder elkaar staan
             var carRoute = [];
@@ -289,7 +223,7 @@ if ((urlParams.has('location') == true) && (number < 3)) {
 
         }
 
-        function onLocationFound(e) {
+       /* function onLocationFound(e) {
         var radius = e.accuracy / 2;
 
         // L.marker(e.latlng).addTo(map)
@@ -319,7 +253,7 @@ if ((urlParams.has('location') == true) && (number < 3)) {
         maxZoom: 16,
         watch: true,
         enableHighAccuracy: false
-    });
+    });*/
 
 
         </script>
