@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-2';
+var CACHE_NAME = 'cache-version-3';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [

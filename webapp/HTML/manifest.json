@@ -1,6 +1,6 @@
 {
-    "name": "Mobilekit JM",
-    "short_name": "Mobilekit",
+    "name": "de Zeeuwse Kust PWA",
+    "short_name": "de Zeeuwse Kust",
     "start_url": "index.html",
     "display": "standalone",
     "scope" : "/",
