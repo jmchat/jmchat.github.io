@@ -1,9 +1,9 @@
 {
     "name": "de Zeeuwse Kust PWA",
     "short_name": "de Zeeuwse Kust",
-    "start_url": "index.html",
+    "start_url": "/webapp/HTML/index.html",
     "display": "standalone",
-    "scope" : "/",
+    "scope" : "/webapp/HTML/",
     "background_color": "#000000",
     "theme_color": "#000000",
     "orientation": "portrait",
