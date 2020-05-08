@@ -1,6 +1,7 @@
 [{
 		"carRoute": "1",
 		"object": "Toeristische plaats 24",
+		"objectNumber": "24",
 		"pois": [{
 			"lat": 51.878726,
 			"lng": 5.850683
@@ -24,6 +25,7 @@
 	{
 		"carRoute": "2",
 		"object": "Toeristische plaats 35",
+		"objectNumber": "35",
 		"pois": [{
 			"lat": 51.878726,
 			"lng": 5.850683
