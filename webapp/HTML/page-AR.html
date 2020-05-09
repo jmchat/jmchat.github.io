@@ -18,7 +18,15 @@
 
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+<script>
+      window.onload = () => {                       navigator.geolocation.getCurrentPosition((position) => {
+        document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+      });
+     }
+    </script>
+
 </head>
 
 <body>
@@ -46,13 +54,15 @@
 
     <a-scene
         vr-mode-ui="enabled: false"
-    embedded
-    arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+        embedded
+        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 
-        <a-text value="This or that will always face the useless." look-at="[gps-camera]" scale="75 75 75"
-            gps-entity-place="latitude: 51.878381; longitude: 5.850766;" ></a-text>
-        <a-camera gps-camera rotation-reader>
-    </a-camera>
+        <a-text 
+            value="This or that will always face the useless." 
+            look-at="[gps-camera]" 
+            scale="75 75 75"
+        ></a-text>
+        <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
         <!-- <div class="section full mt-2">
             <div class="section-title">Title</div>
@@ -61,8 +71,6 @@
             </div>
 
         </div> -->
-
-
 
     </div>
     <!-- * App Capsule -->
