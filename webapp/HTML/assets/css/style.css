@@ -49,8 +49,9 @@ button:hover, button:active, button:focus {
 html{height: 100%}
 
 .map{height: 100%}
+.map-static{height: 400px}
 #map{
-  height: 80%;
+  height: 100%;
   margin-top: 0px !important;}
 
 .fullscreen{z-index: 10000000 !important}
@@ -187,7 +188,7 @@ html{height: 100%}
   margin-top: env(safe-area-inset-top);
   display: flex;
   align-items: center;
-  background: #008793;
+  background: #ffffff;
   z-index: 1000;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
 }
@@ -518,6 +519,12 @@ html{height: 100%}
 
 #appCapsule {
   padding: 56px 0;
+  margin-bottom: env(safe-area-inset-bottom);
+  margin-top: env(safe-area-inset-top);
+}
+
+#appCapsule-map {
+  padding: 56px 0px 0px 0px;
   margin-bottom: env(safe-area-inset-bottom);
   margin-top: env(safe-area-inset-top);
 }
