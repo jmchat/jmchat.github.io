@@ -52,17 +52,17 @@
     <!-- App Capsule -->
     <div id="appCapsule">
 
-    <a-scene
-        vr-mode-ui="enabled: false"
-        embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-
-        <a-text 
-            value="This or that will always face the useless." 
-            look-at="[gps-camera]" 
-            scale="75 75 75"
-        ></a-text>
-        <a-camera gps-camera rotation-reader></a-camera>
+   <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-text
+        value="No markers of iets anders around je weet toch?"
+        look-at="[gps-camera]"
+        scale="5 5 5"
+      ></a-text>
+      <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
         <!-- <div class="section full mt-2">
             <div class="section-title">Title</div>
