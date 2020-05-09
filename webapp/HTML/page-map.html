@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#000000">
-    <title>Routebeschrijving op de camping</title>
+    <title>Plattegrond</title>
     <meta name="description" content="Mobilekit HTML Mobile UI Kit">
     <meta name="keywords" content="bootstrap 4, mobile template, cordova, phonegap, mobile, html" />
     <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
@@ -38,25 +38,18 @@
                 <ion-icon name="chevron-back-outline"></ion-icon>
             </a>
         </div>
-        <div class="pageTitle">Navigeer naar uw plek</div>
+        <div class="pageTitle">Plattegrond</div>
         <div class="right"></div>
     </div>
     <!-- * App Header -->
 
     <!-- App Capsule -->
     <div id="appCapsule" class="map">
-
-
-        <div id="map" class="section full mt-2">
-            <div class="section-title">Title</div>
-           <!--  <div class="wide-block pt-2 pb-2">
-                Great to start your projects from here.
-            </div> -->
-
+       <div id="map" class="section full mt-2">
+            <!-- <div class="section-title">Plattegrond</div>
+            <div class="wide-block pt-2 pb-2">
+                Great to start your projects from here. -->
         </div>
-
-
-
     </div>
     <!-- * App Capsule -->
 
@@ -212,68 +205,7 @@
             L.imageOverlay('./assets/img/plattegrond.png',
             [[51.739686,3.798042], [51.735146,3.809981]]).addTo(map);
 
-        //Hier kunnen dus meerdere routes onder elkaar staan
-            var carRoute = [];
-
-            carRoute[1] = JSON.parse('[{"lat":51.738194,"lng":3.800337},{"lat":51.737249,"lng":3.803118},{"lat":51.736890,"lng":3.803075},{"lat":51.736342,"lng":3.804748},{"lat":51.736102,"lng":3.804741},{"lat":51.736058,"lng":3.805324}]');
-
-            carRoute[2] = JSON.parse('[{"lat":51.8798573,"lng":5.8503105},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
-            
-            var urlParams = new URLSearchParams(window.location.search);
-            var locations = carRoute[urlParams.get('location')];
-            var number = urlParams.get('location');
-
-if ((urlParams.has('location') == true) && (number < 3)) {
-
-            var route = L.motion.polyline(locations, {
-                        color: "#994000",
-                        weight: 8,
-                    }, {
-                        auto: false,
-                        duration: 2000
-                    }, {
-                        removeOnEnd: false,
-                        icon: L.divIcon({html: "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
-                    }).addTo(map);
-
-                setTimeout(function () {
-                route.motionStart();
-            }, 2500);
-
-        }
-
-       /* function onLocationFound(e) {
-        var radius = e.accuracy / 2;
-
-        // L.marker(e.latlng).addTo(map)
-
-         if (!currentLocationMarker) {
-                    currentLocationMarker = L.marker(e.latlng).addTo(map);
-                } else {
-                    if (!myCurrentRoutePath) {
-                        myCurrentRoutePath = L.polyline([currentLocationMarker.getLatLng()], {color: 'blue'}).addTo(map);
-                    } else {
-                        myCurrentRoutePath.addLatLng(currentLocationMarker.getLatLng());
-                    }
-
-                    currentLocationMarker.setLatLng(e.latlng);
-                }
-            }
-
-    function onLocationError(e) {
-        alert(e.message);
-    }
-
-    map.on('locationfound', onLocationFound);
-    map.on('locationerror', onLocationError);
-
-    map.locate({
-        setView: true, 
-        maxZoom: 16,
-        watch: true,
-        enableHighAccuracy: false
-    });*/
-
+        //Hier kunnen eventueel hotspots staan
 
         </script>
     <!-- ///////////// Js Files ////////////////////  -->

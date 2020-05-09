@@ -4,11 +4,12 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-3';
+var CACHE_NAME = 'cache-version-4';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [
   'index.html',
+  'page-route.html',
   '/',
   'https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap',
   'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js',
@@ -20,7 +21,8 @@ var REQUIRED_FILES = [
   'assets/css/inc/owl-carousel/owl.carousel.min.css',
   'assets/css/inc/owl-carousel/owl.theme.default.css',
   'assets/css/inc/bootstrap/bootstrap.min.css',
-  'assets/css/style.css'
+  'assets/css/style.css',
+  'assets/feed/routes.json'
 ];
 
 self.addEventListener('install', function(event) {
