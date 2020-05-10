@@ -53,7 +53,7 @@
 	},
 	{
 		"carRoute": "24",
-		"object": "Toeristische plaats 35",
+		"object": "Toeristische plaats 25",
 		"objectNumber": "35",
 		"pois": [{
       		"lat":51.738194,
@@ -82,7 +82,7 @@
 	},
 	{
 		"carRoute": "35",
-		"object": "Toeristische plaats 35",
+		"object": "Toeristische plaats 47",
 		"objectNumber": "35",
 		"pois": [{
       		"lat":51.738194,
@@ -111,7 +111,7 @@
 	},
 	{
 		"carRoute": "6",
-		"object": "Toeristische plaats 35",
+		"object": "Toeristische plaats 19",
 		"objectNumber": "35",
 		"pois": [{
       		"lat":51.738194,
@@ -140,7 +140,7 @@
 	},
 	{
 		"carRoute": "8",
-		"object": "Toeristische plaats 35",
+		"object": "Toeristische plaats 80",
 		"objectNumber": "35",
 		"pois": [{
       		"lat":51.738194,

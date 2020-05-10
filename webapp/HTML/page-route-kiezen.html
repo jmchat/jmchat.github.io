@@ -8,19 +8,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#000000">
-    <title>Routebeschrijving op de camping</title>
+    <title>Route kiezen</title>
     <meta name="description" content="Mobilekit HTML Mobile UI Kit">
     <meta name="keywords" content="bootstrap 4, mobile template, cordova, phonegap, mobile, html" />
     <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="manifest.json">
-<!-- Zelf toegevoegd -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-    <script src="https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js"></script>
-
 </head>
 
 <body>
@@ -38,27 +32,42 @@
                 <ion-icon name="chevron-back-outline"></ion-icon>
             </a>
         </div>
-        <div class="pageTitle">Navigeer naar uw plek</div>
+        <div class="pageTitle">Route kiezen</div>
         <div class="right"></div>
     </div>
     <!-- * App Header -->
 
     <!-- App Capsule -->
-    <div id="appCapsule" class="map">
+    <div id="appCapsule">
 
 
-        <div id="map" class="section full mt-2">
+        <div class="section full mt-2">
             <div class="section-title">Title</div>
-           <!--  <div class="wide-block pt-2 pb-2">
+            <div class="wide-block pt-2 pb-2">
                 Great to start your projects from here.
-            </div> -->
-
+            </div>
         </div>
 
-
-
+<div class="listview-title mt-2">Kies uw plek</div>
+        <div id="list">
+        <!-- <ul class="listview link-listview">
+            <li><a href="page-route.html?location=1">Link Item 1</a></li>
+            <li>
+                <a href="page-route.html?location=2">
+                    Link Item 3
+                    <span class="badge badge-primary">52</span>
+                </a>
+            </li>
+            <li>
+                <a href="page-route.html?location=3">
+                    Link Item 3
+                </a>
+            </li>
+        </ul> -->
+    </div>
     </div>
     <!-- * App Capsule -->
+
 
    <!-- App Bottom Menu -->
     <div class="appBottomMenu">
@@ -67,7 +76,7 @@
                 <ion-icon name="home-outline"></ion-icon>
             </div>
         </a>
-        <a href="page-map.html" class="item active">
+        <a href="page-map.html" class="item">
             <div class="col">
                 <ion-icon name="map-outline"></ion-icon>
             </div>
@@ -90,7 +99,7 @@
     </div>
     <!-- * App Bottom Menu -->
 
-       <!-- App Sidebar -->
+    <!-- App Sidebar -->
     <div class="modal fade panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -194,109 +203,44 @@
             </div>
         </div>
     </div>
-</div>
+ </div>
     <!-- * App Sidebar -->
 
-   <!--  /////////// Eigen script ///////// -->
-    <script>
-            var map = L.map("map").setView([51.737561,3.803846], 16),
+<script>
 
-            currentLocationMarker,
-            myCurrentRoutePath;
+        var objects = document.getElementById('list')
+        var ourRequest = new XMLHttpRequest();
+        ourRequest.open('GET','https://jmchat.github.io/webapp/HTML/assets/feed/routes.json');
+        ourRequest.onload = function() {
+            var ourData = JSON.parse(ourRequest.responseText);
+            renderHTML(ourData)
+   }; 
+ourRequest.send();
 
-            L.tileLayer('https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',{
-            /*https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {*/
-                // attribution: 'Route beschrijving voor Strandpark De Zeeuwse Kust'
-            }).addTo(map);
+function renderHTML(data) {
+    var htmlString = '';
 
-            L.imageOverlay('./assets/img/plattegrond.png',
-            [[51.739686,3.798042], [51.735146,3.809981]]).addTo(map);
+    for (i = 0; i < data.length; i++) {
+        if (i == 0) {
+            htmlString += '<ul class="listview link-listview"><li><a href="page-route.html?location=' + data[i].carRoute + '">' + data[i].object + '</a/></li>';
+} 
 
-        </script>
+if (i == data.length){
+htmlString += '<li><a href="page-route.html?location=' + data[i].carRoute + '">' + data[i].object + '</a/></li></ul>';
 
-        <script>
+}
 
-            var urlParams = new URLSearchParams(window.location.search);
-            var number = urlParams.get('location');
-            var ourRequest = new XMLHttpRequest();
-            ourRequest.open('GET','https://jmchat.github.io/webapp/HTML/assets/feed/routes.json');
-            ourRequest.onload = function() {
-                var ourData = JSON.parse(ourRequest.responseText);
-            var zoeken = ourData.findIndex(x => x.carRoute === number);
+else {
+htmlString += '<li><a href="page-route.html?location=' + data[i].carRoute + '">' + data[i].object + '</a/></li>';
 
-if (zoeken >= 0) {
-    
-     var antwoord = ourData[zoeken].pois;
-    var route = L.motion.polyline(antwoord, {
-                        color: "#994000",
-                        weight: 8,
-                    }, {
-                        auto: false,
-                        duration: 2000
-                    }, {
-                        removeOnEnd: false,
-                        icon: L.divIcon({html: "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
-                    }).addTo(map);
+}}
 
-                setTimeout(function () {
-                route.motionStart();
-            }, 2500);
-            }}
-        ourRequest.send();
+    objects.insertAdjacentHTML('beforeend', htmlString);
+}
+
+</script>
 
 
-               
-            
-            // console.log(filter)
-                    //Hier kunnen dus meerdere routes onder elkaar staan
-            /*var carRoute = [];
-
-            carRoute[1] = JSON.parse('[{"lat":51.738194,"lng":3.800337},{"lat":51.737249,"lng":3.803118},{"lat":51.736890,"lng":3.803075},{"lat":51.736342,"lng":3.804748},{"lat":51.736102,"lng":3.804741},{"lat":51.736058,"lng":3.805324}]');
-
-            carRoute[2] = JSON.parse('[{"lat":51.8798573,"lng":5.8503105},{"lat":51.878747,"lng":5.851015},{"lat":51.878725,"lng":5.851522},{"lat":51.878695,"lng":5.851781},{"lat":51.878449,"lng":5.851645},{"lat":51.878246,"lng":5.851542}]');
-            
-            var urlParams = new URLSearchParams(window.location.search);
-            var locations = carRoute[urlParams.get('location')];
-            var number = urlParams.get('location');*/
-
-            /*console.log(locations)*/
-
-/*if ((urlParams.has('location') == true) && (number < 3)) {*/
-
-            
-
-       /* function onLocationFound(e) {
-        var radius = e.accuracy / 2;
-
-        // L.marker(e.latlng).addTo(map)
-
-         if (!currentLocationMarker) {
-                    currentLocationMarker = L.marker(e.latlng).addTo(map);
-                } else {
-                    if (!myCurrentRoutePath) {
-                        myCurrentRoutePath = L.polyline([currentLocationMarker.getLatLng()], {color: 'blue'}).addTo(map);
-                    } else {
-                        myCurrentRoutePath.addLatLng(currentLocationMarker.getLatLng());
-                    }
-
-                    currentLocationMarker.setLatLng(e.latlng);
-                }
-            }
-
-    function onLocationError(e) {
-        alert(e.message);
-    }
-
-    map.on('locationfound', onLocationFound);
-    map.on('locationerror', onLocationError);
-
-    map.locate({
-        setView: true, 
-        maxZoom: 16,
-        watch: true,
-        enableHighAccuracy: false
-    });*/
-        </script>
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Jquery -->
     <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
