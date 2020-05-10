@@ -224,8 +224,12 @@
             ourRequest.onload = function() {
                 var ourData = JSON.parse(ourRequest.responseText);
                 var antwoord = ourData[number].pois;
+
+               var zoeken = ourData.findIndex(x => x.carRoute === number);
+
+               console.log(zoeken)
             
-            // console.log(antwoord)
+            // console.log(filter)
                     //Hier kunnen dus meerdere routes onder elkaar staan
             /*var carRoute = [];
 
