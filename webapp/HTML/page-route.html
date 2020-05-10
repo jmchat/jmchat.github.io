@@ -212,8 +212,22 @@
             L.imageOverlay('./assets/img/plattegrond.png',
             [[51.739686,3.798042], [51.735146,3.809981]]).addTo(map);
 
-        //Hier kunnen dus meerdere routes onder elkaar staan
-            var carRoute = [];
+        </script>
+
+        <script>
+
+            var urlParams = new URLSearchParams(window.location.search);
+            var number = urlParams.get('location');
+
+            var ourRequest = new XMLHttpRequest();
+            ourRequest.open('GET','https://jmchat.github.io/webapp/HTML/assets/feed/routes.json');
+            ourRequest.onload = function() {
+                var ourData = JSON.parse(ourRequest.responseText);
+                var antwoord = ourData[number].pois;
+            
+            // console.log(antwoord)
+                    //Hier kunnen dus meerdere routes onder elkaar staan
+            /*var carRoute = [];
 
             carRoute[1] = JSON.parse('[{"lat":51.738194,"lng":3.800337},{"lat":51.737249,"lng":3.803118},{"lat":51.736890,"lng":3.803075},{"lat":51.736342,"lng":3.804748},{"lat":51.736102,"lng":3.804741},{"lat":51.736058,"lng":3.805324}]');
 
@@ -221,11 +235,13 @@
             
             var urlParams = new URLSearchParams(window.location.search);
             var locations = carRoute[urlParams.get('location')];
-            var number = urlParams.get('location');
+            var number = urlParams.get('location');*/
 
-if ((urlParams.has('location') == true) && (number < 3)) {
+            /*console.log(locations)*/
 
-            var route = L.motion.polyline(locations, {
+/*if ((urlParams.has('location') == true) && (number < 3)) {*/
+
+            var route = L.motion.polyline(antwoord, {
                         color: "#994000",
                         weight: 8,
                     }, {
@@ -235,12 +251,16 @@ if ((urlParams.has('location') == true) && (number < 3)) {
                         removeOnEnd: false,
                         icon: L.divIcon({html: "<i class='fa fa-car fa-2x' aria-hidden='true'></i>", iconSize: L.point(27.5, 24)})
                     }).addTo(map);
+            
+            console.log(route)
 
                 setTimeout(function () {
                 route.motionStart();
             }, 2500);
+           // }
 
-        }
+};
+        ourRequest.send();
 
        /* function onLocationFound(e) {
         var radius = e.accuracy / 2;
@@ -273,8 +293,6 @@ if ((urlParams.has('location') == true) && (number < 3)) {
         watch: true,
         enableHighAccuracy: false
     });*/
-
-
         </script>
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Jquery -->
