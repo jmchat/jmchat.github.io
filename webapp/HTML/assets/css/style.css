@@ -5440,6 +5440,20 @@ textarea,
   margin-top: env(safe-area-inset-top);
 }
 
+.notification-box-bottom.show {
+  bottom: 0;
+}
+
+.notification-box-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: 0.3s all;
+  margin-bottom: env(safe-area-inset-top);
+}
+
 .notification-box.show {
   top: 0;
 }

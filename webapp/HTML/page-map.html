@@ -188,6 +188,41 @@
 </div>
     <!-- * App Sidebar -->
 
+<!-- welcome notification  -->
+    <div id="notification-map" class="notification-box-bottom">
+        <div class="notification-dialog android-style">
+            <div class="notification-header">
+                <div class="in">
+                    <img src="assets/img/icon/72x72.png" alt="image" class="imaged w24">
+                    <strong>Receptie Zeeuwse Kust</strong>
+                    <span>dikke tip</span>
+                </div>
+                <a href="#" class="close-button">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <div class="notification-content">
+                <div class="in">
+                    <h3 class="subtitle">Goed om te weten</h3>
+                    <div class="text">
+                        Als u aankomt op ons park kunt u deze App gebruiken om te navigeren naar uw vakanteplek.
+                    </div>
+                </div>
+            </div>
+            <div class="notification-footer">
+                    <a href="page-route-kiezen.html" class="notification-button">
+                    <ion-icon name="navigate-outline"></ion-icon>
+                                Bekijk uw route
+                    </a>
+                   <!--  <a href="#" class="notification-button">
+                                <ion-icon name="cloud"></ion-icon>
+                                Save to Cloud
+                            </a> -->
+            </div>
+        </div>
+    </div>
+    <!-- * welcome notification -->
+
    <!--  /////////// Eigen script ///////// -->
     <script>
             var map = L.map("map").setView([51.737561,3.803846], 16),
@@ -221,6 +256,12 @@
     <!-- Base Js File -->
     <script src="assets/js/base.js"></script>
 
+
+<script>
+        setTimeout(() => {
+            notification('notification-map');
+        }, 2000);
+    </script>
 
 </body>
 
