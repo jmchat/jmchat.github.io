@@ -14,6 +14,37 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="manifest.json">
+
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("jm-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+
 </head>
 
 <body>
@@ -231,124 +262,12 @@
     <!-- * App Bottom Menu -->
 
     <!-- App Sidebar -->
-    <div class="modal fade panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body p-0">
+    
+    <div jm-include-html="https://jmchat.github.io/webapp/HTML/assets/feed/sidebar.html"></div> 
 
-                    <!-- profile box -->
-                    <div class="profileBox">
-                        <!-- <div class="image-wrapper">
-                            <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged rounded">
-                        </div> -->
-                        <div class="in">
-                            <strong>Strandpark de Zeeuwse Kust</strong>
-                            <div class="text-muted">
-                                <ion-icon name="location"></ion-icon>
-                                Renesse, Zeeland
-                            </div>
-                        </div>
-                        <a href="javascript:;" class="close-sidebar-button" data-dismiss="modal">
-                            <ion-icon name="close"></ion-icon>
-                        </a>
-                    </div>
-                    <!-- * profile box -->
-
-                    <ul class="listview flush transparent no-line image-listview mt-2">
-                        <li>
-                            <a href="index.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="home-outline"></ion-icon>
-                                </div>
-                                <div class="in">
-                                    Home
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-map.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="map-outline"></ion-icon>
-                                </div>
-                                <div class="in">
-                                    Plattegrond
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-restaurant.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="restaurant-outline"></ion-icon>
-                                </div>
-                                <div class="in">
-                                    <div>Restaurant</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-activiteiten.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="football-outline"></ion-icon>
-                                </div>
-                                <div class="in">
-                                    <div>Activiteiten</div>
-                                    <span class="badge badge-danger">todo</span>
-                                </div>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="page-faciliteiten.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="trail-sign-outline"></ion-icon>
-                                </div>
-                                <div class="in">
-                                    <div>Faciliteiten</div>
-                                    <span class="badge badge-danger">todo</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-opening.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="time-outline"></ion-icon>
-                                </div>
-                                <div class="in">
-                                    <div>Openingstijden</div>
-                                    <span class="badge badge-danger">todo</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-AR.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="game-controller-outline"></ion-icon>
-                                </div>
-                                <div class="in">
-                                    <div>AR Gaming</div>
-                                    <span class="badge badge-danger">FUN</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <div class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="moon-outline"></ion-icon>
-                                </div>
-                                <div class="in">
-                                    <div>Dark Mode</div>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input dark-mode-switch"
-                                            id="darkmodesidebar">
-                                        <label class="custom-control-label" for="darkmodesidebar"></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-            </div>
-        </div>
-    </div>
- </div>
+<script>
+includeHTML();
+</script>
     <!-- * App Sidebar -->
 
     <!-- welcome notification  -->
