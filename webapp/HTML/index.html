@@ -331,31 +331,6 @@
  </div>
     <!-- * App Sidebar -->
 
-    <!-- welcome notification  -->
-    <div id="notification-welcome" class="notification-box">
-        <div class="notification-dialog android-style">
-            <div class="notification-header">
-                <div class="in">
-                    <img src="assets/img/icon/72x72.png" alt="image" class="imaged w24">
-                    <strong>Mobilekit</strong>
-                    <span>just now</span>
-                </div>
-                <a href="#" class="close-button">
-                    <ion-icon name="close"></ion-icon>
-                </a>
-            </div>
-            <div class="notification-content">
-                <div class="in">
-                    <h3 class="subtitle">Welcome to Mobilekit</h3>
-                    <div class="text">
-                        Mobilekit is a PWA ready Mobile UI Kit Template.
-                        Great way to start your mobile websites and pwa projects.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- * welcome notification -->
 
     <!-- iOS Add to Home Action Sheet -->
     <div class="modal inset fade action-sheet ios-add-to-home" id="ios-add-to-home-screen" tabindex="-1" role="dialog">
@@ -413,6 +388,31 @@
     </div>
     <!-- * Android Add to Home Action Sheet -->
 
+<!-- welcome notification  -->
+    <!-- <div id="notification-welcome" class="notification-box">
+        <div class="notification-dialog android-style">
+            <div class="notification-header">
+                <div class="in">
+                    <img src="assets/img/icon/72x72.png" alt="image" class="imaged w24">
+                    <strong>Receptie Zeeuwse Kust</strong>
+                    <span>new</span>
+                </div>
+                <a href="#" class="close-button">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <div class="notification-content">
+                <div class="in">
+                    <h3 class="subtitle">DEMO PWA</h3>
+                    <div class="text">
+                        Dit is een volledige Progressive Web App demo voor uw vakantiepark.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- * welcome notification -->
+
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Jquery -->
     <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
@@ -426,16 +426,16 @@
     <!-- jQuery Circle Progress -->
     <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
     <!-- Base Js File -->
-    <script src="assets/js/base.js"></script>
+    <script src="assets/js/base-min.js"></script>
 
 
     <script>
         // Toggle Add to Home Button with 3 seconds delay.
         // Toggle only once
-        AddtoHome("3000", "once");
+        AddtoHome("4000", "once");
     </script>
 
-    <!-- <script>
+   <!--  <script>
         setTimeout(() => {
             notification('notification-welcome', 5000);
         }, 2000);

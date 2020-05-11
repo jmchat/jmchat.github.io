@@ -229,6 +229,11 @@ function notification(target, time) {
         }, time);
     }
 };
+// close button bottom otification
+$(".notification-box-bottom .close-button").click(function (event) {
+    event.preventDefault();
+    $(".notification-box-bottom.show").removeClass("show");
+});
 // close button notification
 $(".notification-box .close-button").click(function (event) {
     event.preventDefault();
