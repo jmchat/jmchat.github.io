@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Route maker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        #map {
+            width: 450px;
+            height: 450px;
+        }
+
+        #route {
+            width: 450px;
+            height: 250px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js"></script>
+</head>
+<body>
+
+<!-- Hier wordt de map in geplaatst -->
+<div id="map"></div>
+
+<!-- Hier komt hopelijk de route in :-) -->
+
+<p id="gelukt"></p>
+
+<textarea id="route"></textarea>
+
+<div> <button onclick="myFunction()">Copy text</button> </div>
+
+<!-- hm.leaflet.custom -->
+<script>
+            var map = L.map("map").setView([51.737561,3.803846], 16),
+
+            currentLocationMarker,
+            myCurrentRoutePath;
+
+            L.tileLayer('https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',{
+            /*https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {*/
+                // attribution: 'Route beschrijving voor Strandpark De Zeeuwse Kust'
+            }).addTo(map);
+
+            L.imageOverlay('./assets/img/plattegrond.png',
+            [[51.739686,3.798042], [51.735146,3.809981]]).addTo(map);
+
+            var routes = document.querySelector("#route");
+
+            var happy = document.querySelector("#gelukt");
+
+function onMapClick(e) {
+
+L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+        
+route.innerHTML +=  '{"lat":' + e.latlng.lat +', "lng":' + e.latlng.lng + '},'
+    
+}
+
+map.on('click', onMapClick);
+
+</script>
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("route");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  happy.innerHTML += 'Coördinaten zitten in je klipbord'
+}
+</script>
+
+</body>
+</html>
