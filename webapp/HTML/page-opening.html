@@ -65,7 +65,6 @@
 
         <div class="tab-content mt-1">
 
-
             <!-- photos tab -->
             <div class="tab-pane section fade full mt-1 mb-2 active show" id="receptie" role="tabpanel">
 
@@ -139,7 +138,6 @@
 
  <!-- sounds tab -->
             <div class="tab-pane fade section fade full mt-1 mb-2" id="zwembad" role="tabpanel">
-
                 <div class="section-title">Openingstijden zwembad</div>
             <div class="content-header mb-05">
                 Aangepaste openingstijden in verband met corona
@@ -210,7 +208,6 @@
 
             <!-- videos tab -->
             <div class="tab-pane fade section fade full mt-1 mb-2" id="restaurant" role="tabpanel">
-
                 <div class="section-title">Openingstijden restaurant</div>
             <div class="content-header mb-05">
                 In verband met Corona graag vooraf reserveren.
@@ -289,30 +286,36 @@
 
 
    <!-- App Bottom Menu -->
-    <div class="appBottomMenu">
+    <div class="appBottomMenu section full mt-2">
         <a href="index.html" class="item">
             <div class="col">
                 <ion-icon name="home-outline"></ion-icon>
+                <strong>Home</strong>
             </div>
         </a>
         <a href="page-map.html" class="item">
             <div class="col">
                 <ion-icon name="map-outline"></ion-icon>
+                <strong>Plattegrond</strong>
             </div>
         </a>
-        <a href="page-chat.html" class="item active">
+        <a href="javascript:;" class="item" data-toggle="modal" data-target="#sidebarPanel">
             <div class="col">
-                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                <div class="action-button large">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            </div>
+        </a>
+        <a href="page-opening.html" class="item active">
+            <div class="col">
+                <ion-icon name="time-outline"></ion-icon>
+                <strong>Openingstijden</strong>
             </div>
         </a>
         <a href="page-restaurant.html" class="item">
             <div class="col">
                 <ion-icon name="restaurant-outline"></ion-icon>
-            </div>
-        </a>
-        <a href="javascript:;" class="item" data-toggle="modal" data-target="#sidebarPanel">
-            <div class="col">
-                <ion-icon name="menu-outline"></ion-icon>
+                <strong>Restaurant</strong>
             </div>
         </a>
     </div>
