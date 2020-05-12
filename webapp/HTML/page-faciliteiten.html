@@ -16,16 +16,21 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="manifest.json">
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
-  var OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "a0e13c40-61d2-420f-bd20-156027c7a53a",
-      notifyButton: {
-        enable: true,
-      },
+   var OneSignal = window.OneSignal || [];
+    var initConfig = {
+        appId: "a0e13c40-61d2-420f-bd20-156027c7a53a",
+        notifyButton: {
+            enable: true
+        },
+    };
+    OneSignal.push(function () {
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/webapp/HTML' };
+        OneSignal.SERVICE_WORKER_PATH = 'webapp/HTML/OneSignalSDKWorker.js'
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = 'webapp/HTML/OneSignalSDKUpdaterWorker.js'
+        OneSignal.init(initConfig);
     });
-  });
 </script>
 </head>
 
