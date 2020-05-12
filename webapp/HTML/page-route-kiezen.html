@@ -15,22 +15,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="manifest.json">
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-   var OneSignal = window.OneSignal || [];
-    var initConfig = {
-        appId: "a0e13c40-61d2-420f-bd20-156027c7a53a",
-        notifyButton: {
-            enable: true
-        },
-    };
-    OneSignal.push(function () {
-        OneSignal.SERVICE_WORKER_PARAM = { scope: '/webapp/HTML/' };
-        OneSignal.SERVICE_WORKER_PATH = 'webapp/HTML/OneSignalSDKWorker.js'
-        OneSignal.SERVICE_WORKER_UPDATER_PATH = 'webapp/HTML/OneSignalSDKUpdaterWorker.js'
-        OneSignal.init(initConfig);
-    });
-</script>
 </head>
 
 <body>
@@ -220,7 +204,7 @@
     <!-- jQuery Circle Progress -->
     <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
     <!-- Base Js File -->
-    <script src="assets/js/base-min.js"></script>
+    <script src="assets/js/base.min.js"></script>
 
     <script src="assets/js/route-kiezen-min.js"></script>
 
