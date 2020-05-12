@@ -25,7 +25,7 @@
         },
     };
     OneSignal.push(function () {
-        OneSignal.SERVICE_WORKER_PARAM = { scope: '/webapp/HTML' };
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/webapp/HTML/' };
         OneSignal.SERVICE_WORKER_PATH = 'webapp/HTML/OneSignalSDKWorker.js'
         OneSignal.SERVICE_WORKER_UPDATER_PATH = 'webapp/HTML/OneSignalSDKUpdaterWorker.js'
         OneSignal.init(initConfig);

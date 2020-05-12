@@ -21,7 +21,6 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js"></script>
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
    var OneSignal = window.OneSignal || [];
     var initConfig = {
@@ -31,7 +30,7 @@
         },
     };
     OneSignal.push(function () {
-        OneSignal.SERVICE_WORKER_PARAM = { scope: '/webapp/HTML' };
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/webapp/HTML/' };
         OneSignal.SERVICE_WORKER_PATH = 'webapp/HTML/OneSignalSDKWorker.js'
         OneSignal.SERVICE_WORKER_UPDATER_PATH = 'webapp/HTML/OneSignalSDKUpdaterWorker.js'
         OneSignal.init(initConfig);
