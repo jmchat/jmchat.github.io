@@ -439,6 +439,10 @@ html{height: 100%}
   margin-bottom: 3px;
 }
 
+.menu-icon-big{
+  font-size: 36px !important;
+}
+
 .appBottomMenu .item .action-button {
   display: inline-flex;
   width: 50px;
