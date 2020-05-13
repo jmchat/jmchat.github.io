@@ -17,15 +17,24 @@
             width: 450px;
             height: 400px;
         }
+
+        .button-copy{ 
+            font-size: 20px;
+            background: green;
+            color: white;
+        }
+
+        .button-refresh{ 
+            font-size: 20px;
+        }
     </style>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-    <script src="https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js"></script>
 </head>
 <body>
 <h1>Hier kun je de routes samenstellen</h1>
+<div><p>Klik op de plattgrond op elk knooppunt om tot de juiste route te komen en kopieer vervolgens de GPS locaties en plak deze in de catalogus bij het object.</p></div>
 <!-- Hier wordt de map in geplaatst -->
 <div id="map"></div>
 
@@ -35,7 +44,8 @@
 
 <textarea id="route"></textarea>
 
-<div> <button onclick="myFunction()">Kopiëer naar klipbord</button> </div>
+<div> <button class="button-copy" onclick="myFunction()">Kopiëer route naar klipbord</button>
+<button class="button-refresh" onclick="reload()">Nieuwe route maken</button>  </div>
 
 <!-- hm.leaflet.custom -->
 <script>
@@ -43,6 +53,9 @@
 
             currentLocationMarker,
             myCurrentRoutePath;
+
+            var routes = document.querySelector("#route");
+            var happy = document.querySelector("#gelukt");
 
             L.tileLayer('https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',{
             /*https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {*/
@@ -52,9 +65,8 @@
             L.imageOverlay('./assets/img/plattegrond.png',
             [[51.739686,3.798042], [51.735146,3.809981]]).addTo(map);
 
-            var routes = document.querySelector("#route");
+            // 3 start routes net voorbij de slagbomen
 
-            var happy = document.querySelector("#gelukt");
 
 function onMapClick(e) {
 
@@ -70,13 +82,24 @@ map.on('click', onMapClick);
 
 <script>
 function myFunction() {
-  var copyText = document.getElementById("route");
-  copyText.select();
+    var copyText = document.getElementById("route");
+    var editText = copyText.innerHTML.slice(0,-1)
+
+    copyText.innerHTML = editText
+
+    copyText.select();
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");
   happy.innerHTML += 'Coördinaten zitten in je klipbord'
 }
+
+function reload(){
+location.reload();
+}
+
 </script>
+
+
 
 </body>
 </html>
