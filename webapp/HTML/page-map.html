@@ -257,6 +257,12 @@
             currentLocationMarker,
             myCurrentRoutePath;
 
+            /*var myIcon = L.divIcon({
+                html: '<ion-icon class="icon-big" name="trail-sign-outline"></ion-icon>',
+                iconSize: L.point(27.5, 24)
+
+            });*/
+
             L.tileLayer('https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',{
             /*https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {*/
                 // attribution: 'Route beschrijving voor Strandpark De Zeeuwse Kust'
@@ -265,8 +271,12 @@
             L.imageOverlay('./assets/img/plattegrond.png',
             [[51.739686,3.798042], [51.735146,3.809981]]).addTo(map);
 
-        //Hier kunnen eventueel hotspots staan
+            //Hier kunnen eventueel hotspots staan
 
+           /* L.marker([51.738197505951604, 3.8003736734390263], {icon:myIcon}).addTo(map)
+             .bindPopup("<b>Hello world!</b><br />I am a popup.");*/
+
+        
         </script>
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Jquery -->

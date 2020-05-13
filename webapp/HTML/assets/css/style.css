@@ -53,6 +53,10 @@ html{height: 100%}
   margin-top: 16px;
 }
 
+.leaflet-container{
+  font-size: 20px !important;
+}
+
 .map{height: 100%}
 .map-static{height: 100%}
 #map{
@@ -67,11 +71,11 @@ html{height: 100%}
 
 #gp-k9tm6rki-widget-container{margin-top: 55px !important;}
 
+.fa-car:before {color: white !important;}
+
 .leaflet-div-icon{
   background: transparent !important;
   border: 0px !important;}
-
-.fa-car:before {color: white !important;}
 
 
 /* //////////JM edit /////////// */
