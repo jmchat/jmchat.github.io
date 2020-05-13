@@ -27,6 +27,10 @@
         .button-refresh{ 
             font-size: 20px;
         }
+
+        .button-route{ 
+            font-size: 20px;
+        }
     </style>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
@@ -34,7 +38,10 @@
 </head>
 <body>
 <h1>Hier kun je de routes samenstellen</h1>
-<div><p>Klik op de plattgrond op elk knooppunt om tot de juiste route te komen en kopieer vervolgens de GPS locaties en plak deze in de catalogus bij het object.</p></div>
+<div><p>Klik op de plattgrond op elk knooppunt om tot de juiste route te komen en kopieer vervolgens de GPS locaties en plak deze in de catalogus bij het object.</p>
+<button class="button-route" onclick="slagboomcamper()">Route naar camperplaats</button>
+<button class="button-route" onclick="slagboomkamperen()">Route naar kamperen en verhuur</button>
+<button class="button-route" onclick="slagboomverhuur()">Route naar verhuur</button><br><br></div>
 <!-- Hier wordt de map in geplaatst -->
 <div id="map"></div>
 
@@ -44,7 +51,7 @@
 
 <textarea id="route"></textarea>
 
-<div> <button class="button-copy" onclick="myFunction()">Kopiëer route naar klipbord</button>
+<div> <button class="button-copy" onclick="copy()">Kopiëer route naar klipbord</button>
 <button class="button-refresh" onclick="reload()">Nieuwe route maken</button>  </div>
 
 <!-- hm.leaflet.custom -->
@@ -57,6 +64,19 @@
             var routes = document.querySelector("#route");
             var happy = document.querySelector("#gelukt");
 
+
+            var slagboom1 = JSON.parse('[{"lat":51.738197505951604, "lng":3.8003736734390263},{"lat":51.73801147656626, "lng":3.8008886575698857},{"lat":51.73779222666466, "lng":3.8006740808486943}]');
+
+            var slagboom1text = '{"lat":51.738197505951604, "lng":3.8003736734390263},{"lat":51.73801147656626, "lng":3.8008886575698857},{"lat":51.73779222666466, "lng":3.8006740808486943},'
+
+            var slagboom2 = JSON.parse('[{"lat":51.73821079373555, "lng":3.8003468513488774},{"lat":51.737214199097544, "lng":3.8031685352325444},{"lat":51.7368853180437, "lng":3.8031363487243657}]');
+
+            var slagboom2text = '{"lat":51.73821079373555, "lng":3.8003468513488774},{"lat":51.737214199097544, "lng":3.8031685352325444},{"lat":51.7368853180437, "lng":3.8031363487243657},'
+
+            var slagboom3 = JSON.parse('[{"lat":51.73820747178992, "lng":3.800357580184937},{"lat":51.7372175211162, "lng":3.8031685352325444},{"lat":51.73757629769149, "lng":3.8035172224044804}]');
+
+            var slagboom3text = '{"lat":51.73820747178992, "lng":3.800357580184937},{"lat":51.7372175211162, "lng":3.8031685352325444},{"lat":51.73757629769149, "lng":3.8035172224044804},'
+
             L.tileLayer('https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',{
             /*https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {*/
                 // attribution: 'Route beschrijving voor Strandpark De Zeeuwse Kust'
@@ -66,22 +86,42 @@
             [[51.739686,3.798042], [51.735146,3.809981]]).addTo(map);
 
             // 3 start routes net voorbij de slagbomen
+function slagboomcamper(){
 
+    var emptypois = document.getElementById("route");
+    emptypois.insertAdjacentHTML('beforeend', slagboom1text);
 
-function onMapClick(e) {
-
-L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-        
-route.innerHTML +=  '{"lat":' + e.latlng.lat +', "lng":' + e.latlng.lng + '},'
-    
+    for (i = 0; i < slagboom1.length; i++) 
+    L.marker([slagboom1[i].lat, slagboom1[i].lng]).addTo(map);
 }
 
-map.on('click', onMapClick);
+function slagboomkamperen(){
 
+    var emptypois = document.getElementById("route");
+    emptypois.insertAdjacentHTML('beforeend', slagboom2text);
+
+    for (i = 0; i < slagboom2.length; i++) 
+    L.marker([slagboom2[i].lat, slagboom2[i].lng]).addTo(map);
+}
+
+function slagboomverhuur(){
+
+    var emptypois = document.getElementById("route");
+    emptypois.insertAdjacentHTML('beforeend', slagboom3text);
+
+    for (i = 0; i < slagboom3.length; i++) 
+    L.marker([slagboom3[i].lat, slagboom3[i].lng]).addTo(map);
+}
+
+function onMapClick(e) {
+L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+route.innerHTML +=  '{"lat":' + e.latlng.lat +', "lng":' + e.latlng.lng + '},'    
+}
+map.on('click', onMapClick);
 </script>
 
 <script>
-function myFunction() {
+function copy() {
     var copyText = document.getElementById("route");
     var editText = copyText.innerHTML.slice(0,-1)
 
@@ -96,7 +136,6 @@ function myFunction() {
 function reload(){
 location.reload();
 }
-
 </script>
 
 
