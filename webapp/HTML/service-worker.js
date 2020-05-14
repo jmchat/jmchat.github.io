@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-16';
+var CACHE_NAME = 'cache-version-17';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [
@@ -43,6 +43,7 @@ var REQUIRED_FILES = [
   'assets/img/sample/photo/faciliteiten.jpg',
   'assets/img/sample/photo/keuken.jpg',
   'assets/img/sample/photo/restaurent.JPG',
+  'assets/img/favicon.png',
   'manifest.json'
 ];
 
