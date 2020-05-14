@@ -16,7 +16,6 @@ function renderHTML(data) {
     objects.insertAdjacentHTML('beforeend', htmlString);
 }
 
-
 objects.addEventListener("click", store);
 
 function store(e){
