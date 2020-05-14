@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-11';
+var CACHE_NAME = 'cache-version-12';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [
@@ -17,17 +17,25 @@ var REQUIRED_FILES = [
   'page-activiteiten.html',
   'page-route.html',
   '/',
+  'assets/img/plattegrond.png',
   'https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap',
+  'https://unpkg.com/leaflet@1.6.0/dist/leaflet.css',
+  'https://unpkg.com/leaflet@1.6.0/dist/leaflet.js',
+  'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+  'https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js',
   'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js',
   'assets/js/lib/jquery-3.4.1.min.js',
   'assets/js/lib/popper.min.js',
   'assets/js/lib/bootstrap.min.js',
   'assets/js/plugins/owl-carousel/owl.carousel.min.js',
-  'assets/js/base.js',
+  'assets/js/base.min.js',
   'assets/css/inc/owl-carousel/owl.carousel.min.css',
   'assets/css/inc/owl-carousel/owl.theme.default.css',
   'assets/css/inc/bootstrap/bootstrap.min.css',
   'assets/css/style.css',
+  'assets/js/route-kiezen-min.js',
+  'assets/img/icon/72x72.png',
+  'assets/img/icon/192x192.png',
   'assets/feed/routes.json'
 ];
 
