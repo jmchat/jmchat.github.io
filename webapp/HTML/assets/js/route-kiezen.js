@@ -1,6 +1,6 @@
         var objects = document.getElementById('list')
         var ourRequest = new XMLHttpRequest();
-        ourRequest.open('GET','https://jmchat.github.io/webapp/HTML/assets/feed/routes.json');
+        ourRequest.open('GET','https://hm.socialcmsdemo.nl/l/catalog/feed/routes?limit=500');
         ourRequest.onload = function() {
             var ourData = JSON.parse(ourRequest.responseText);
             renderHTML(ourData)

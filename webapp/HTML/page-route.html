@@ -224,7 +224,7 @@
             var urlParams = new URLSearchParams(window.location.search);
             var number = urlParams.get('location');
             var ourRequest = new XMLHttpRequest();
-            ourRequest.open('GET','https://jmchat.github.io/webapp/HTML/assets/feed/routes.json');
+            ourRequest.open('GET','https://hm.socialcmsdemo.nl/l/catalog/feed/routes?limit=500');
             ourRequest.onload = function() {
                 var ourData = JSON.parse(ourRequest.responseText);
             var zoeken = ourData.findIndex(x => x.carRoute === number);
