@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-20';
+var CACHE_NAME = 'cache-version-21';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [
@@ -25,6 +25,7 @@ var REQUIRED_FILES = [
   'https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js',
   'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js',
   'assets/js/lib/jquery-3.4.1.min.js',
+  'assets/js/',
   'assets/js/lib/popper.min.js',
   'assets/js/lib/bootstrap.min.js',
   'assets/js/plugins/owl-carousel/owl.carousel.min.js',
@@ -33,7 +34,7 @@ var REQUIRED_FILES = [
   'assets/css/inc/owl-carousel/owl.theme.default.css',
   'assets/css/inc/bootstrap/bootstrap.min.css',
   'assets/css/style.css',
-  'assets/js/route-kiezen-min.js',
+  'assets/js/route-kiezen.js',
   'assets/img/icon/72x72.png',
   'assets/img/icon/192x192.png',
   'https://hm.socialcmsdemo.nl/l/catalog/feed/routes?limit=500',
