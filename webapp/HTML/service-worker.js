@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-17';
+var CACHE_NAME = 'cache-version-18';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [
@@ -36,13 +36,13 @@ var REQUIRED_FILES = [
   'assets/js/route-kiezen-min.js',
   'assets/img/icon/72x72.png',
   'assets/img/icon/192x192.png',
-  'assets/feed/routes.json',
+  'https://hm.socialcmsdemo.nl/l/catalog/feed/routes?limit=500',
   'assets/img/favicon.png',
   'assets/img/sample/photo/auto-naar-plek.jpg',
   'assets/img/sample/photo/sanitair.jpg',
   'assets/img/sample/photo/faciliteiten.jpg',
   'assets/img/sample/photo/keuken.jpg',
-  'assets/img/sample/photo/restaurent.JPG',
+  'assets/img/sample/photo/restaurant.JPG',
   'assets/img/favicon.png',
   'manifest.json'
 ];
