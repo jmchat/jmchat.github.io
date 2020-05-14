@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-19';
+var CACHE_NAME = 'cache-version-20';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [
@@ -42,6 +42,11 @@ var REQUIRED_FILES = [
   'assets/img/sample/photo/sanitair.jpg',
   'assets/img/sample/photo/faciliteiten.jpg',
   'assets/img/sample/photo/keuken.jpg',
+  'assets/img/sample/photo/openingstijden.jpg',
+  'assets/img/sample/photo/activiteiten.jpg',
+  'assets/img/sample/photo/zeeuwsekust.png',
+  'assets/img/sample/photo/animatie.JPG',
+  'assets/img/logo.png',
   'assets/img/sample/photo/restaurant.JPG',
   'manifest.json'
 ];
