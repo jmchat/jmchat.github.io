@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-12';
+var CACHE_NAME = 'cache-version-16';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [
@@ -36,7 +36,14 @@ var REQUIRED_FILES = [
   'assets/js/route-kiezen-min.js',
   'assets/img/icon/72x72.png',
   'assets/img/icon/192x192.png',
-  'assets/feed/routes.json'
+  'assets/feed/routes.json',
+  'assets/img/favicon.png',
+  'assets/img/sample/photo/auto-naar-plek.jpg',
+  'assets/img/sample/photo/sanitair.jpg',
+  'assets/img/sample/photo/faciliteiten.jpg',
+  'assets/img/sample/photo/keuken.jpg',
+  'assets/img/sample/photo/restaurent.JPG',
+  'manifest.json'
 ];
 
 self.addEventListener('install', function(event) {
