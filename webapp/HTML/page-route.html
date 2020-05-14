@@ -220,9 +220,8 @@
         </script>
 
         <script>
-
-            var urlParams = new URLSearchParams(window.location.search);
-            var number = urlParams.get('location');
+           //var urlParams = new URLSearchParams(window.location.search);
+            var number = window.localStorage.getItem('location');
             var ourRequest = new XMLHttpRequest();
             ourRequest.open('GET','https://hm.socialcmsdemo.nl/l/catalog/feed/routes?limit=500');
             ourRequest.onload = function() {
@@ -233,7 +232,7 @@
 
 if (zoeken >= 0) {
     
-     var antwoord = ourData[zoeken].pois;
+    var antwoord = ourData[zoeken].pois;
     var route = L.motion.polyline(antwoord, {
                         color: "#994000",
                         weight: 8,
