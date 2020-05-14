@@ -4,11 +4,17 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-10';
+var CACHE_NAME = 'cache-version-11';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [
   'index.html',
+  'page-map.html',
+  'page-faciliteiten.html',
+  'page-opening.html',
+  'page-restaurant.html',
+  'page-route-kiezen.html',
+  'page-activiteiten.html',
   'page-route.html',
   '/',
   'https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap',
