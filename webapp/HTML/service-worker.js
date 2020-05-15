@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-21';
+var CACHE_NAME = 'cache-version-22';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [
@@ -25,7 +25,6 @@ var REQUIRED_FILES = [
   'https://igor-vladyka.github.io/leaflet.motion/dist/leaflet.motion.min.js',
   'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js',
   'assets/js/lib/jquery-3.4.1.min.js',
-  'assets/js/',
   'assets/js/lib/popper.min.js',
   'assets/js/lib/bootstrap.min.js',
   'assets/js/plugins/owl-carousel/owl.carousel.min.js',
