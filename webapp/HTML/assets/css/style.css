@@ -53,6 +53,10 @@ html{height: 100%}
   margin-top: 16px;
 }
 
+.animated-header{
+  margin-top: -56px;
+}
+
 .leaflet-container{
   font-size: 20px !important;
 }
@@ -77,6 +81,17 @@ html{height: 100%}
   background: transparent !important;
   border: 0px !important;}
 
+.sticky {
+  position: fixed;
+  top: 56px;
+  background: white !important;
+  z-index: 10;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+.shadow {
+  box-shadow: none !important;
+}
 
 /* //////////JM edit /////////// */
 
@@ -246,6 +261,13 @@ html{height: 100%}
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
 }
 
+appHeader.scrolled-animated.is-active {
+  background: #008793;
+  min-height: 56px;
+  border-bottom-color: #E1E1E1;
+  box-shadow: none;
+}
+
 .appHeader.scrolled.is-active .pageTitle {
   opacity: 1;
 }
@@ -255,8 +277,14 @@ html{height: 100%}
   border-bottom: 0 !important;
 }
 
-.appHeader.scrolled.bg-primary .headerButton {
+/* ////////// #008793 /////////// */
+
+.appHeader.scrolled.bg-primary .headerButton-home {
   color: #008793;
+}
+
+.appHeader.scrolled.bg-primary .headerButton {
+  color: white;
 }
 
 .appHeader.scrolled.bg-primary.is-active {
@@ -264,7 +292,11 @@ html{height: 100%}
 }
 
 .appHeader.scrolled.bg-primary.is-active .headerButton {
-  color: #008793 !important;
+  color: white !important;
+}
+
+.appHeader.scrolled.bg-primary.is-active .headerButton-home {
+  color: white !important;
 }
 
 .appHeader.scrolled.bg-secondary {
@@ -1307,6 +1339,17 @@ h6 .badge {
   font-size: 13px;
   color: #4F5050 !important;
 }
+
+.text-muted-closed {
+  font-size: 13px;
+  color: red !important;
+}
+
+.text-muted-open {
+  font-size: 13px;
+  color: #008793 !important;
+}
+
 
 h1 {
   font-size: 34px;

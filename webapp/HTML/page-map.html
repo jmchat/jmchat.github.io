@@ -48,6 +48,31 @@
 
     <!-- * App Capsule -->
 
+    <!-- Content Action Sheet -->
+        <div class="modal fade action-sheet" id="actionSheetContent" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Action Sheet Content</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum, urna eget
+                                finibus fermentum, velit metus maximus erat, nec sodales elit justo vitae sapien. Sed
+                                fermentum varius erat, et dictum lorem. Cras pulvinar vestibulum purus sed hendrerit.
+                                Praesent et auctor dolor. Ut sed ultrices justo. Fusce tortor erat, scelerisque sit amet
+                                diam rhoncus, cursus dictum lorem. Ut vitae arcu egestas, congue nulla at, gravida
+                                purus.
+                            </p>
+                            <a href="#" class="btn btn-secondary btn-block btn-lg" data-dismiss="modal">Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * Content Action Sheet -->
+
    <!-- App Bottom Menu -->
     <div class="appBottomMenu section full mt-2">
         <a href="index.html" class="item">
@@ -69,10 +94,10 @@
             </div>
             </div>
         </a>
-        <a href="page-opening.html" class="item">
+        <a href="page-faciliteiten.html" class="item">
             <div class="col">
-                <ion-icon name="time-outline"></ion-icon>
-                <strong>Openingstijden</strong>
+                <ion-icon name="trail-sign-outline"></ion-icon>
+                <strong>Faciliteiten</strong>
             </div>
         </a>
         <a href="page-restaurant.html" class="item">
@@ -130,16 +155,6 @@
                             </a>
                         </li>
                         <li>
-                            <a href="page-restaurant.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="restaurant-outline"></ion-icon>
-                                </div>
-                                <div class="in">
-                                    <div>Restaurant</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
                             <a href="page-activiteiten.html" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="football-outline"></ion-icon>
@@ -157,7 +172,16 @@
                                 </div>
                                 <div class="in">
                                     <div>Faciliteiten</div>
-                                    <span class="badge badge-danger">todo</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="page-restaurant.html" class="item">
+                                <div class="icon-box bg-primary">
+                                    <ion-icon name="restaurant-outline"></ion-icon>
+                                </div>
+                                <div class="in">
+                                    <div>Restaurant</div>
                                 </div>
                             </a>
                         </li>
@@ -169,16 +193,6 @@
                                 <div class="in">
                                     <div>Chat</div>
                                     <span class="badge badge-danger">3</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page-opening.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="time-outline"></ion-icon>
-                                </div>
-                                <div class="in">
-                                    <div>Openingstijden</div>
                                 </div>
                             </a>
                         </li>
@@ -257,11 +271,17 @@
             currentLocationMarker,
             myCurrentRoutePath;
 
-            /*var myIcon = L.divIcon({
-                html: '<ion-icon class="icon-big" name="trail-sign-outline"></ion-icon>',
+            var myIcon = L.divIcon({
+                html: '<ion-icon id="hotspot" class="icon-big" name="trail-sign-outline"></ion-icon>',
                 iconSize: L.point(27.5, 24)
 
-            });*/
+            });
+
+            var myIcon2 = L.divIcon({
+                html: '<ion-icon id="hotspot" class="icon-big" name="time-outline"></ion-icon>',
+                iconSize: L.point(27.5, 24)
+
+            });
 
             L.tileLayer('https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png',{
             /*https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {*/
@@ -273,10 +293,13 @@
 
             //Hier kunnen eventueel hotspots staan
 
-           /* L.marker([51.738197505951604, 3.8003736734390263], {icon:myIcon}).addTo(map)
-             .bindPopup("<b>Hello world!</b><br />I am a popup.");*/
+            L.marker([51.738197505951604, 3.8003736734390263], {icon:myIcon}).addTo(map);
 
-        
+            L.marker([51.73852180981214, 3.8014626502990727], {icon:myIcon2}).addTo(map);
+
+            var hotspot = document.getElementById("hotspot");
+            console.log(hotspot)
+            
         </script>
     <!-- ///////////// Js Files ////////////////////  -->
     <!-- Jquery -->

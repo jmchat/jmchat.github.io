@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#000000">
-    <title>Chat</title>
+    <title>Contact</title>
     <meta name="description" content="Mobilekit HTML Mobile UI Kit">
     <meta name="keywords" content="bootstrap 4, mobile template, cordova, phonegap, mobile, html" />
     <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
@@ -32,47 +32,54 @@
                 <ion-icon name="chevron-back-outline"></ion-icon>
             </a>
         </div>
-        <div class="pageTitle">Chat met ons</div>
+        <div class="pageTitle">Contact</div>
         <div class="right"></div>
     </div>
     <!-- * App Header -->
 
     <!-- App Capsule -->
-    <div id="appCapsule" class="map-static">
+    <div id="appCapsule">
 
-
-        <div id="chat" class="section full mt-2"></div>
-
-
-
+        <div class="section full mt-2">
+            <div class="section-title">Title</div>
+            <div class="wide-block pt-2 pb-2">
+                Great to start your projects from here.
+            </div>
+        </div>
     </div>
     <!-- * App Capsule -->
 
-
    <!-- App Bottom Menu -->
-    <div class="appBottomMenu">
+    <div class="appBottomMenu section full mt-2">
         <a href="index.html" class="item">
             <div class="col">
                 <ion-icon name="home-outline"></ion-icon>
+                <strong>Home</strong>
             </div>
         </a>
         <a href="page-map.html" class="item">
             <div class="col">
                 <ion-icon name="map-outline"></ion-icon>
+                <strong>Plattegrond</strong>
             </div>
-        <a href="page-chat.html" class="item active">
+        </a>
+        <a href="javascript:;" class="item" data-toggle="modal" data-target="#sidebarPanel">
             <div class="col">
-                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                <div class="action-button large">
+                <ion-icon class="menu-icon-big" name="menu-outline"></ion-icon>
+            </div>
+            </div>
+        </a>
+        <a href="page-faciliteiten.html" class="item">
+            <div class="col">
+                <ion-icon name="trail-sign-outline"></ion-icon>
+                <strong>Faciliteiten</strong>
             </div>
         </a>
         <a href="page-restaurant.html" class="item">
             <div class="col">
                 <ion-icon name="restaurant-outline"></ion-icon>
-            </div>
-        </a>
-        <a href="javascript:;" class="item" data-toggle="modal" data-target="#sidebarPanel">
-            <div class="col">
-                <ion-icon class="menu-icon-big" name="menu-outline"></ion-icon>
+                <strong>Restaurant</strong>
             </div>
         </a>
     </div>
@@ -199,13 +206,6 @@
     <!-- * App Sidebar -->
 
     <!-- ///////////// Js Files ////////////////////  -->
-  <script> 
-    window.__flowai_webclient_embed = 'chat';
-    window.__flowai_webclient_hideHeader = true;
-   </script>  
-
-<script src="https://widget.flow.ai/w/NjhkYjExNzEtNmUwNi00NmVjLThhMmItNWExYTM3MGE2ODY3fGIzMTQyMTk5LWUwZTctNDJkYS05MzFiLWQ0NTNkMTBhYjI1YQ==/flow-webclient-1.1.2.min.js"></script>
-
     <!-- Jquery -->
     <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
     <!-- Bootstrap-->
