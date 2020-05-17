@@ -93,6 +93,18 @@ html{height: 100%}
   box-shadow: none !important;
 }
 
+.opening-closed.intro {
+    font-size: 13px;
+    color: red;
+    padding-left: 16px;
+}
+
+.opening-open.intro {
+    font-size: 13px;
+    color: #008793;
+    padding-left: 16px;
+}
+
 /* //////////JM edit /////////// */
 
 
