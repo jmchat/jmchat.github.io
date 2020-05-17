@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 // Cache name
-var CACHE_NAME = 'cache-version-22';
+var CACHE_NAME = 'cache-version-23';
 
 // Files required to make this app work offline
 var REQUIRED_FILES = [
@@ -12,7 +12,9 @@ var REQUIRED_FILES = [
   'page-map.html',
   'page-faciliteiten.html',
   'page-opening.html',
-  'page-restaurant.html',
+  'page-fac-restaurant.html',
+  'page-fac-sanitair.html',
+  'page-contact.html',
   'page-route-kiezen.html',
   'page-activiteiten.html',
   'page-route.html',
