@@ -105,6 +105,11 @@ html{height: 100%}
     padding-left: 16px;
 }
 
+ion-icon.icon-activiteit.md.hydrated {
+    margin: 0 2px -2px 0;
+    font-size: 15px;
+  }
+
 /* //////////JM edit /////////// */
 
 
