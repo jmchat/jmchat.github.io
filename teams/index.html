@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello world!</title>
+<!--     <link rel="stylesheet" 
+          href="https://statics.teams.microsoft.com/evergreen-assets/doc-assets/styles/main.css"> -->
+    <style>
+      body {
+        margin: 1em;
+        font-family: 'Segoe UI', 'Roboto', 'Droid Sans','Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      a {
+        color: #6264A7;
+      }
+    </style>
+    
+    <!-- Teams JS SDK -->
+    <script src="https://statics.teams.cdn.office.net/sdk/v1.6.0/js/MicrosoftTeams.min.js"></script>
+  
+  </head>  
+  <body>
+    <h1>Hello world! </h1>
+    
+    <p>
+      I am glad to see you here.
+    </p>
+    
+    <div>
+      <img src="https://placekitten.com/600/300" alt="kitten">
+    </div>
+    
+    <p>
+      Cat ipsum dolor sit amet, see owner, run in terror or kitty kitty pussy cat doll and sometimes switches in french and say 
+      "miaou" just because well why not, groom yourself 4 hours - checked, have your beauty sleep 18 hours - 
+      checked, be fabulous for the rest of the day - checked.
+    </p>
+    
+    <script>
+    microsoftTeams.initialize();
+    
+    // Handle dark mode
+    microsoftTeams.getContext((context) => {
+      if(context.theme !== 'default') {
+        document.body.style.color = '#fff';
+      }
+    });
+    microsoftTeams.registerOnThemeChangeHandler((theme)=> { 
+      if(theme !== 'default') {
+        document.body.style.color = '#fff';
+      } else {
+        document.body.style.color = 'inherit';
+      }
+    });
+    </script>
+  </body>
+</html>
