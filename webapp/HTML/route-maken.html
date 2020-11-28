@@ -114,7 +114,7 @@ function slagboomverhuur(){
 }
 
 function onMapClick(e) {
-L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+L.marker([e.latlng.lat, e.latlng.lng], {draggable: true}).addTo(map);
 route.innerHTML +=  '{"lat":' + e.latlng.lat +', "lng":' + e.latlng.lng + '},'    
 }
 map.on('click', onMapClick);
